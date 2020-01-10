@@ -19,6 +19,7 @@ export class HomeComponent {
         this.breadcrumbs.setLinks([
             {iconClass: 'fa fa-tachometer', route: '/admin', text: 'Home'},
             {text: 'Home'}
+            
         ]);
     }
 
