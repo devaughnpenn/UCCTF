@@ -4,10 +4,10 @@ import { WoFlashService } from '@app/wo-module/wo-flash/wo-flash.service';
 import { Router } from '@angular/router';
 
 @Component({
-    templateUrl: 'home.component.html',
-    styleUrls: ['home.component.css']
+    templateUrl: 'download.component.html',
+    styleUrls: ['download.component.css']
 })
-export class HomeComponent implements OnInit {
+export class DownloadComponent implements OnInit {
     constructor (
         private metaPage: MetaPageService,
         private woFlash: WoFlashService,
@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.router.navigate(['/admin/home']);
+        this.router.navigate(['/admin/download']);
         this.woFlash.show();
-        this.metaPage.setTitle('Home');
+        this.metaPage.setTitle('Download');
     }
 }

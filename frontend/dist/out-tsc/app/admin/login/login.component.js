@@ -26,7 +26,7 @@ var LoginComponent = /** @class */ (function () {
         this.isLoading = false;
         this.title.setTitle('Login');
         if (this.isLoading && this.auth.can('admin')) {
-            this.router.navigate(['/admin/users']);
+            this.router.navigate(['/admin/home']);
         }
     }
     LoginComponent.prototype.doLogin = function () {
@@ -42,7 +42,7 @@ var LoginComponent = /** @class */ (function () {
                 _this.auth.setToken(res['access_token'], res['expires_in']);
                 _this.auth.setRefreshToken(res['refresh_token']);
                 _this.auth.setUser(res['user']);
-                _this.router.navigate(['/admin/users']);
+                _this.router.navigate(['/admin/home']);
             }
             else {
                 setTimeout(function () {

@@ -44,7 +44,7 @@ export class LoginComponent {
                 this.auth.setToken(res['access_token'], res['expires_in']);
                 this.auth.setRefreshToken(res['refresh_token']);
                 this.auth.setUser(res['user']);
-                this.router.navigate(['/admin/users']);
+                this.router.navigate(['/admin/home']);
             } else {
                 setTimeout(() => {
                     this.formErrors = res['errors'];

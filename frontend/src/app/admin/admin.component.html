@@ -2,21 +2,24 @@
     <div class="l-header" *ngIf="isLogged()">
         <div class="l-header__logo">
             <a class="long-logo" routerLink="/admin">
-                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-rocket" aria-hidden="true"></i>
                 {{title}}
             </a>
             <a class="short-logo" routerLink="/admin">
-                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-rocket" aria-hidden="true"></i>
             </a>
         </div>
         <a href="javascript:void(0)" (click)="sidebarToggle()" class="sidebar-toggle"></a>
         <app-user-menu></app-user-menu>
     </div>
     <div class="l-right">
-        
+        <div class="v-nav">
+            <div class="v-nav__header">
+                MAIN NAVIGATION
+            </div>
+        </div>
         <ul class="sidebar-menu">
             <li class="treeview" [routerLinkActive]="['active']">
-                <a routerLink="home" class="d-none"></a>
                 <a routerLink="home">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Home</span>
@@ -44,7 +47,7 @@
             <li class="treeview" [routerLinkActive]="['active']">
                 <a routerLink="questions">
                     <i class="fa fa-bars" aria-hidden="true"></i>
-                    <span>Challenge Repository</span>
+                    <span>Challenges</span>
                 </a>
             </li>
             <li class="treeview" [routerLinkActive]="['active']">
@@ -55,14 +58,20 @@
             </li>
             <li class="treeview" [routerLinkActive]="['active']">
                 <a routerLink="email">
-                    <i class="fa fa-send-o" aria-hidden="true"></i>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>Send Email</span>
                 </a>
             </li>
             <li class="treeview" [routerLinkActive]="['active']">
-                <a routerLink="data">
-                    <i class="fa fa-area-chart" aria-hidden="true"></i>
-                    <span>Data/Stats</span>
+                <a routerLink="download">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <span>Download Data</span>
+                </a>
+            </li>
+            <li class="treeview" [routerLinkActive]="['active']">
+                <a routerLink="account">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <span>My Account</span>
                 </a>
             </li>
             <li class="treeview" [routerLinkActive]="['active']">

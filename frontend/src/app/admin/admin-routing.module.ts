@@ -10,7 +10,12 @@ const routes: Routes = [
         { path: 'questions', loadChildren: './questions/questions.module#QuestionsModule'},
         { path: 'events', loadChildren: './events/events.module#EventsModule'},
         { path: 'scoreboards', loadChildren: './scoreboards/scoreboards.module#ScoreboardsModule'},
-        { path: '', redirectTo: 'users', pathMatch: 'full' },
+        { path: 'home', loadChildren: './home/home.module#HomeModule'},
+        { path: 'email', loadChildren: './email/email.module#EmailModule'},
+        { path: 'download', loadChildren: './download/download.module#DownloadModule'},
+        { path: 'account', loadChildren: './account/account.module#AccountModule'},
+        { path: 'help', loadChildren: './help/help.module#HelpModule'},
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]},
     { path: 'login', component: LoginComponent },
 ];
