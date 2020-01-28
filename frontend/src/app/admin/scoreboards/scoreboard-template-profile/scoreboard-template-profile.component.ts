@@ -78,6 +78,10 @@ export class ScoreboardTemplateProfileComponent implements OnInit {
             }
         });
     }
+    doCancel(event) {
+        window.history.back();
+        event.preventDefault();
+    }
 
     onImageChanged(event, column) {
         if (event.result && event.result.file.id) {

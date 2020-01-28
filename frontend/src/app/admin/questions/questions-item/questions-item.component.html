@@ -81,6 +81,20 @@
                                     <input type="number" min="1" step="1" name="level" class="form-control" [(ngModel)]="dataForm['level']"/>
                                 </div>
                             </div>
+
+                            <div class="form-row">
+                                <div class="form-label col-4">
+                                    Category <i class="ico-star">*</i>
+                                </div>
+                                <div class="form-field col-8"
+                                     [ngClass]="{hasError: dataErrors['category']}">
+                                    <select class="form-control" name="category"
+                                            [(ngModel)]="dataForm['category']">
+                                        <option *ngFor="let category of CATEGORY; let categoryI=index" value="{{categoryI}}">{{category}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-row">
                                 <div class="form-label col-4">
                                     Status <i class="ico-star">*</i>
@@ -93,7 +107,8 @@
                             </div>
                             <div class="controls-group btn-group">
                                 <button class="btn btn-success">{{dataForm['id'] == 0 ? 'Create' : 'Update'}}</button>
-                            </div>                            
+                            </div>
+                            <button (click)="doCancel($event)" class="btn btn-default">Cancel</button>                            
                         </form>
                     </div>
                 </div>

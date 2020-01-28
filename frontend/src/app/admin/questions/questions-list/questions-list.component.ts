@@ -41,6 +41,14 @@ export class QuestionsListComponent implements OnInit {
         'Open answer',
     ];
 
+    CATEGORY = [
+        'Steganography',
+        'Trivia',
+        'Forensics',
+        'Decoding',
+        'Misc.',
+    ];
+
     constructor(
         private router: Router,
         private woFlash: WoFlashService,

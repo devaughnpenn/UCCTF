@@ -79,4 +79,8 @@ export class EventProfileComponent  implements OnInit {
             }
         });
     }
+    doCancel(event) {
+        window.history.back();
+        event.preventDefault();
+    }
 }

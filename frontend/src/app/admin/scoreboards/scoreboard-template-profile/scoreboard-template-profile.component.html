@@ -1,6 +1,6 @@
 <div class="c-scoreboard-template-profile">
     <section class="content-header">
-      <h1>Scoreboard Template Profile</h1>
+      <h1>New Scoreboard Template</h1>
     </section>
 
     <div class="content" [class.is-loading]="isLoading === true">
@@ -102,6 +102,7 @@
                     <button class="btn btn-primary">
                         Save
                     </button>
+                    <button (click)="doCancel($event)" class="btn btn-default">Cancel</button>
                 </form>
             </div>
         </div>

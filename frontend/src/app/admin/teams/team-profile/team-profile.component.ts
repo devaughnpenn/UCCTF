@@ -79,4 +79,9 @@ export class TeamProfileComponent  implements OnInit {
             this.dataForm['avatar_file_id'] = null;
         }
     }
+
+    doCancel(event) {
+        window.history.back();
+        event.preventDefault();
+    }
 }

@@ -1,6 +1,6 @@
 <div class="c-questions-list">
     <section class="content-header">
-        <h1>Question Repository</h1>
+        <h1>Challenge Repository</h1>
     </section>
 
     <div class="content">
@@ -114,6 +114,23 @@
                                     Type
                                 </wo-sort>
                             </th>
+
+                            <th>
+                                <wo-sort [woSortActive]="criteria['sort']" woSortStart="level" (sort)="sortBy($event)">
+                                    Level
+                                </wo-sort>
+                            </th>
+                            <th>
+                                <wo-sort [woSortActive]="criteria['sort']" woSortStart="category" (sort)="sortBy($event)">
+                                    Category
+                                </wo-sort>
+                            </th>
+                            <th>
+                                <wo-sort [woSortActive]="criteria['sort']" woSortStart="points" (sort)="sortBy($event)">
+                                    Points
+                                </wo-sort>
+                            </th>
+
                             <th style="width: 110px;">
                                 <wo-sort [woSortActive]="criteria['sort']" woSortStart="created_at"
                                          (sort)="sortBy($event)">Created At
@@ -134,6 +151,9 @@
                             <td class="td-link">{{row['description']}}</td>
                             <td class="td-link">{{STATUS_LABELS[row['status']]}}</td>
                             <td class="td-link">{{TYPES[row['type']]}}</td>
+                            <td class="td-link">{{row['level']}}</td>
+                            <td class="td-link">{{CATEGORY['category']}}</td>
+                            <td class="td-link">{{row['points']}}</td>
                             <td class="td-link">{{row['created_at'] | date}}</td>
                             <td class="td-link">{{row['updated_at'] | date}}</td>
                             <td>

@@ -44,6 +44,14 @@ export class QuizQuestionFromLibraryComponent implements AfterViewInit {
         'Open answer',
     ];
 
+    CATEGORY = [
+        'Steganography',
+        'Trivia',
+        'Forensics',
+        'Decoding',
+        'Misc.',
+    ];
+
     constructor(
         private router: Router,
         private woFlash: WoFlashService,

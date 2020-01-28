@@ -50,6 +50,14 @@ export class QuizQuestionsComponent implements OnInit {
         'Open answer',
     ];
 
+    CATEGORY = [
+        'Steganography',
+        'Trivia',
+        'Forensics',
+        'Decoding',
+        'Misc.',
+    ];
+
     get newQuestionShow(): boolean {
         return this._newQuestionShow;
     }

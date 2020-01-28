@@ -21,6 +21,15 @@ export class QuestionsItemComponent implements OnInit {
         'Dropdown',
         'Open answer',
     ];
+
+    CATEGORY = [
+        'Steganography',
+        'Trivia',
+        'Forensics',
+        'Decoding',
+        'Misc.',
+    ];
+
     id = 0;
     itemId: number;
     dataForm = {
@@ -108,5 +117,8 @@ export class QuestionsItemComponent implements OnInit {
             }
         });
     }
- 
+    doCancel(event) {
+        window.history.back();
+        event.preventDefault();
+    }
 }
