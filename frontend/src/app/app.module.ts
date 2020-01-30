@@ -11,6 +11,7 @@ import { ModalModule } from '@app/modal/modal.module';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './share/page-not-found/page-not-found.component';
+import { SignupComponent } from './signup/signup.component';
 
 import { AuthService } from './auth/auth.service';
 import { AuthAdminGuard } from './auth/auth-admin-guard.service';
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   { path: 'quiz', loadChildren: './quiz/quiz.module#QuizModule'},
   // { path: '', redirectTo: '/admin/users', pathMatch: 'full' },
   { path: '', redirectTo: '/quiz/login', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'signup', loadChildren: './signup/signup.module#SignupModule'},
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
