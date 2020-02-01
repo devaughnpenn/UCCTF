@@ -27,7 +27,7 @@ class UserForm extends Model
     public function rules()
     {
         return [
-            [['username', 'email', 'first_name', 'last_name'], 'required'],
+            [['username', /*'email',*/ 'first_name', 'last_name'], 'required'],
             ['password', 'required', 'when' => function ($model) {
                 if ($model->role === 'public') {
                     return false;
