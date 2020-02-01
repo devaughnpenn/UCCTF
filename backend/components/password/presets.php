@@ -20,7 +20,7 @@ return [
         'hasEmail' => false
     ],
     StrengthValidator::NORMAL => [
-        'min' => 12,
+        'min' => 8,
         'upper' => 1,
         'lower' => 1,
         'digit' => 1,
@@ -29,7 +29,7 @@ return [
         'hasEmail' => true
     ],
     StrengthValidator::FAIR => [
-        'min' => 10,
+        'min' => 8,
         'upper' => 1,
         'lower' => 1,
         'digit' => 1,
@@ -38,7 +38,7 @@ return [
         'hasEmail' => true
     ],
     StrengthValidator::MEDIUM => [
-        'min' => 10,
+        'min' => 8,
         'upper' => 1,
         'lower' => 1,
         'digit' => 2,
@@ -47,7 +47,7 @@ return [
         'hasEmail' => true
     ],
     StrengthValidator::STRONG => [
-        'min' => 12,
+        'min' => 8,
         'upper' => 2,
         'lower' => 2,
         'digit' => 2,
