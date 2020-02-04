@@ -28,14 +28,15 @@ class UserForm extends Model
     {
         return [
             [['username', /*'email',*/ 'first_name', 'last_name'], 'required'],
-            ['password', 'required', 'when' => function ($model) {
+            ['email', 'default', 'value' => null],
+	    ['password', 'required', 'when' => function ($model) {
                 if ($model->role === 'public') {
                     return false;
                 } else {
                     return $model->id == 0;
                 }
             }],
-            ['email', 'email'],
+            ['email', 'email', 'skipOnEmpty'=>true],
             ['password', 'safe'],
             ['id', 'safe'],
             [['status', 'role'], 'safe'],
@@ -46,7 +47,7 @@ class UserForm extends Model
                     return true;
                 }
             }],
-            [
+            /*[
                 'email',
                 'unique',
                 'targetClass' => 'app\models\Users',
@@ -57,7 +58,7 @@ class UserForm extends Model
                         return $this->email != Users::findOne(['id' => $this->id])->email;
                     }
                 }
-            ],
+            ],*/
             [
                 'username',
                 'unique',
@@ -74,7 +75,7 @@ class UserForm extends Model
                 'username',
                 'unique',
                 'targetClass' => 'app\models\Users',
-                'targetAttribute' => ['email'],
+                //'targetAttribute' => ['email'],
                 'when' => function ($model) {
                     if ($model->id == 0) {
                         return true;
