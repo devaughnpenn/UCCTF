@@ -16,7 +16,7 @@
 }
 
 .wo-breadcrumbs__item a {
-    color: #444;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -25,5 +25,5 @@
 }
 
 .wo-breadcrumbs__item span {
-    color: #777;
+    color: gainsboro;
 }
