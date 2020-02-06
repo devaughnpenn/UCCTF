@@ -7,7 +7,7 @@
         <form action="javascript:void(0)" (ngSubmit)="doSubmit()">
             <div class="form-row">
                 <div class="form-label required">
-                    Username
+                    Team Name
                 </div>
                 <div class="form-field">
                     <input class="form-control" [ngClass]="{'hasError': formErrors?.username}" [(ngModel)]="dataForm['username']" type="text" name="signup[username]">
@@ -27,33 +27,11 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-label required">
-                    Password
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.password}" [(ngModel)]="dataForm['password']" type="password" name="signup[password]">
-                    <div [ngClass]="{show: formErrors?.password}" class="label-error">
-                        {{formErrors?.password}}
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-label required">
-                    Confirm Password
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.password_repeat}" [(ngModel)]="dataForm['password_repeat']" type="password" name="signup[password_repeat]">
-                    <div [ngClass]="{show: formErrors?.password_repeat}" class="label-error">
-                        {{formErrors?.password_repeat}}
-                    </div>
-                </div>
-            </div>
 
             <div class="form-row">
                 <div class="form-label"></div>
                 <button type="submit" class="btn btn-primary">
-                    Create New Account
+                    Create New Team
                 </button>
             </div>
 
