@@ -23,6 +23,7 @@ class EventsController extends Controller
             'download-access-pins' => 'app\modules\admin\controllers\events\DownloadAccessPinsAction',
             'download-report' => 'app\modules\admin\controllers\events\DownloadReportAction',
             'download-team-report' => 'app\modules\admin\controllers\events\DownloadTeamReportAction',
+            'download-all-data' => 'app\modules\admin\controllers\events\DownloadAllDataAction',
         ];
     }
 }
