@@ -14,8 +14,7 @@ import { AuthService } from '@app/auth/auth.service';
     styleUrls: ['download.component.css']
 })
 export class DownloadComponent implements OnInit {
-    instance = this;
-    id = 2;
+
     constructor (
         private woFlash: WoFlashService,
         private router: Router,
@@ -45,7 +44,7 @@ export class DownloadComponent implements OnInit {
         window.location.href = environment.API_BASE_URL +
             //'/admin/events/download-access-pins?event_id=' + this.id +
             //'&access-token=' + this.auth.getToken();
-            '/admin/events/download-all-data&access-token=' + this.auth.getToken()
+            '/admin/events/download-all-data?&access-token=' + this.auth.getToken()
     }
 
 
