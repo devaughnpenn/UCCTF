@@ -23,7 +23,7 @@ class DownloadAllQuestionsAction extends Action
      */
     public function run()
     {
-        $users = $this->getAllQuestions();
+        $questions = $this->getAllQuestions();
 
         $data = [
             [
