@@ -37,15 +37,26 @@ class DownloadAllDataAction extends Action
         $data[] = [];
 
         $data[] = [
-            ['value' => 'Users',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'ID',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'Username',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'First Name',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'Last Name',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'Email',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'Password',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+
+            /*['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 11]],
             ['value' => 'Events', 'style' => ['font-weight' => 'bold', 'width' => 12]],
-            ['value' => 'Challenges', 'style' => ['font-weight' => 'bold', 'width' => 14]],
+            ['value' => 'Challenges', 'style' => ['font-weight' => 'bold', 'width' => 14]],*/
         ];
 
        foreach ($users as $user){
             $data[] = [
+                ['value' => $user['id']],
                 ['value' => $user['username']],
+                ['value' => $user['first_name']],
+                ['value' => $user['last_name']],
+                ['value' => $user['email']],
+                ['value' => $user['password']],
             ];
         }
         /*foreach ($teams as $team) {
