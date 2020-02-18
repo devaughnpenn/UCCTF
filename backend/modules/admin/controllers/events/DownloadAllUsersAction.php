@@ -30,7 +30,7 @@ class DownloadAllUsersAction extends Action
 
         $data = [
             [
-                ['value' => 'CTF Data', 'colspan' => 10, 'style' => ['font-size' => 16, 'font-weight' => 'bold', 'color' => '#2196f3', 'height' => 20]],
+                ['value' => 'Users', 'colspan' => 10, 'style' => ['font-size' => 16, 'font-weight' => 'bold', 'color' => '#2196f3', 'height' => 20]],
             ]
         ];
 
@@ -77,7 +77,7 @@ class DownloadAllUsersAction extends Action
         }*/
 
 
-        (new Array2Xslsx(['AllCTFData' => $data]))->toDownload('AllCtfData.xlsx');
+        (new Array2Xslsx(['Users' => $data]))->toDownload('AllCTFUsers.xlsx');
     }
 
     private function getAllUsers()

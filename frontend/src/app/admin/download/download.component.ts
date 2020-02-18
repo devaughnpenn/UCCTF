@@ -40,11 +40,21 @@ export class DownloadComponent implements OnInit {
         this.metaPage.setTitle('Download');
     }
 
-    doDownloadData() {
+    doDownloadUsers() {
         window.location.href = environment.API_BASE_URL +
-            //'/admin/events/download-access-pins?event_id=' + this.id +
-            //'&access-token=' + this.auth.getToken();
-            '/admin/events/download-all-users?&access-token=' + this.auth.getToken()
+        '/admin/events/download-all-users?&access-token=' + this.auth.getToken();
+    }
+    doDownloadTeams(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-teams?&access-token=' + this.auth.getToken();
+    }
+    doDownloadEvents(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-events?&access-token=' + this.auth.getToken();
+    }
+    dowDownloadQuestions(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-questions?&access-token=' + this.auth.getToken();
     }
 
 
