@@ -43,9 +43,9 @@ class DownloadAllEventsAction extends Action
             ['value' => 'Description',  'style' => ['font-weight' => 'bold', 'width' => 50]],
             ['value' => 'Updated At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'User ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Group By Level',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 15]],
+            ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 15]],
+            ['value' => 'Group By Level',  'style' => ['font-weight' => 'bold', 'width' => 25]],
 
         ];
 

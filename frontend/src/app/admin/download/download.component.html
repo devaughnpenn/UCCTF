@@ -12,19 +12,12 @@
                 </div>
         </div>
     </div>
-    <div class="content" (click)="doDownloadUsers()">
-        <button style="color:blue;">Download Users</button>
-    </div>
-    
-    <div class="content" (click)="doDownloadTeams()">
-        <button style="color:blue;">Download Teams</button>
+
+    <div class="c-groups__top_buttons btn-group" style="padding-left: 15px; color: white;">
+        <a class="btn btn-secondary" (click)="doDownloadUsers()">Download Users</a>
+        <a class="btn btn-secondary" (click)="doDownloadTeams()">Download Teams</a>
+        <a class="btn btn-secondary" (click)="doDownloadEvents()">Download Events</a>
+        <a class="btn btn-secondary" (click)="doDownloadQuestions()">Download Challenge Repository</a>
     </div>
 
-    <div class="content" (click)="doDownloadEvents()">
-        <button style="color:blue;">Download Events</button>
-    </div>
-
-    <div class="content" (click)="doDownloadQuestions()">
-        <button style="color:blue;">Download Challenge Repository</button>
-    </div>
 </div>

@@ -34,21 +34,21 @@ class DownloadAllQuestionsAction extends Action
         $data[] = [];
 
         $data[] = [
-            ['value' => 'Title',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'Description',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'Title',  'style' => ['font-weight' => 'bold', 'width' => 35]],
+            ['value' => 'Description',  'style' => ['font-weight' => 'bold', 'width' => 40]],
             ['value' => 'Status',  'style' => ['font-weight' => 'bold', 'width' => 10]],
             ['value' => 'User ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 15]],
             ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Updated At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'Show Description',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Show Description',  'style' => ['font-weight' => 'bold', 'width' => 45]],
             ['value' => 'Points',  'style' => ['font-weight' => 'bold', 'width' => 10]],
             ['value' => 'Type',  'style' => ['font-weight' => 'bold', 'width' => 10]],
             ['value' => 'File ID',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Level',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Library Question ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Library Created From ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
-            ['value' => 'Is Library Question?',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Library Question ID',  'style' => ['font-weight' => 'bold', 'width' => 45]],
+            ['value' => 'Library Created From ID',  'style' => ['font-weight' => 'bold', 'width' => 45]],
+            ['value' => 'Is Library Question?',  'style' => ['font-weight' => 'bold', 'width' => 45]],
 
         ];
 
