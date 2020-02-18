@@ -23,10 +23,10 @@ class DownloadAllDataAction extends Action
      */
     public function run()
     {
-        $users = $this->getAllData(1);
-        $teams = Teams::findAll(1);
-        $events = Events::findAll(1);
-        $questions = Questions::findAll(1);
+        $users = $this->getAllData();
+        //$teams = $this->getAllData();
+        //$events = $this->getAllData();
+        //$questions = $this->getAllData();
 
         $data = [
             [
@@ -43,12 +43,12 @@ class DownloadAllDataAction extends Action
             ['value' => 'Challenges', 'style' => ['font-weight' => 'bold', 'width' => 14]],
         ];
 
-       /* foreach ($users as $user){
+       foreach ($users as $user){
             $data[] = [
                 ['value' => $user['username']],
             ];
         }
-        foreach ($teams as $team) {
+        /*foreach ($teams as $team) {
             $data[] = [
                 ['value' => $team['name']],
             ];
@@ -82,7 +82,7 @@ class DownloadAllDataAction extends Action
                     ])
                     ->asArray();
         
-        $query = Teams::find()
+       /* $query = Teams::find()
                     ->select([
                         'id'             => 'teams.id',
                         'name'           => 'teams.name',
@@ -124,10 +124,13 @@ class DownloadAllDataAction extends Action
                         'library_created_from_id'   => 'questions.library_created_from_id',
                         'is_library_question'       => 'questions.is_library_question',
                     ])
-                    ->asArray();
+                    ->asArray();*/
 
        // $query->orderBy(['users.username' => SORT_ASC]);
 
         return $query->asArray()->all();
+		/*$queryTeams->asArray()->all(),
+		$queryEvents->asArray()->all(),
+		$queryQuestions->asArray()->all(),*/
     }
 }
