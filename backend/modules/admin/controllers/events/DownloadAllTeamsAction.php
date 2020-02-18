@@ -16,7 +16,7 @@ use app\components\media\Array2Xslsx;
 /**
  * @inheritdoc
  */
-class DownloadAllUsersAction extends Action
+class DownloadAllTeamsAction extends Action
 {
     /**
      * @inheritdoc
