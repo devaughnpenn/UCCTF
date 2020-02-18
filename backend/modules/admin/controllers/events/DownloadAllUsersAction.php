@@ -37,12 +37,12 @@ class DownloadAllUsersAction extends Action
         $data[] = [];
 
         $data[] = [
-            ['value' => 'ID',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Username',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'First Name',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Last Name',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Email',  'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Password',  'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Username',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'First Name',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'Last Name',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'Email',  'style' => ['font-weight' => 'bold', 'width' => 30]],
+            ['value' => 'Hashed Password',  'style' => ['font-weight' => 'bold', 'width' => 100]],
 
             /*['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 11]],
             ['value' => 'Events', 'style' => ['font-weight' => 'bold', 'width' => 12]],
@@ -59,12 +59,13 @@ class DownloadAllUsersAction extends Action
                 ['value' => $user['password']],
             ];
         }
-        /*foreach ($teams as $team) {
+
+       /* foreach ($teams as $team) {
             $data[] = [
                 ['value' => $team['name']],
             ];
         }
-        foreach ($events as $event){
+       foreach ($events as $event){
             $data[] = [
                 ['value' => $event['name']],
             ];
@@ -93,7 +94,7 @@ class DownloadAllUsersAction extends Action
                     ])
                     ->asArray();
         
-       /* $query = Teams::find()
+       /*$query = Teams::find()
                     ->select([
                         'id'             => 'teams.id',
                         'name'           => 'teams.name',
