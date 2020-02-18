@@ -44,7 +44,7 @@ export class DownloadComponent implements OnInit {
         window.location.href = environment.API_BASE_URL +
             //'/admin/events/download-access-pins?event_id=' + this.id +
             //'&access-token=' + this.auth.getToken();
-            '/admin/events/download-all-data?&access-token=' + this.auth.getToken()
+            '/admin/events/download-all-users?&access-token=' + this.auth.getToken()
     }
 
 

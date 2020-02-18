@@ -16,14 +16,14 @@ use app\components\media\Array2Xslsx;
 /**
  * @inheritdoc
  */
-class DownloadAllDataAction extends Action
+class DownloadAllUsersAction extends Action
 {
     /**
      * @inheritdoc
      */
     public function run()
     {
-        $users = $this->getAllData();
+        $users = $this->getAllUsers();
         //$teams = $this->getAllData();
         //$events = $this->getAllData();
         //$questions = $this->getAllData();
@@ -79,7 +79,7 @@ class DownloadAllDataAction extends Action
         (new Array2Xslsx(['AllCTFData' => $data]))->toDownload('AllCtfData.xlsx');
     }
 
-    private function getAllData()
+    private function getAllUsers()
     {
         
         $query = Users::find()
