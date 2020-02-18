@@ -52,7 +52,7 @@ export class DownloadComponent implements OnInit {
         window.location.href = environment.API_BASE_URL +
         '/admin/events/download-all-events?&access-token=' + this.auth.getToken();
     }
-    dowDownloadQuestions(){
+    doDownloadQuestions(){
         window.location.href = environment.API_BASE_URL +
         '/admin/events/download-all-questions?&access-token=' + this.auth.getToken();
     }

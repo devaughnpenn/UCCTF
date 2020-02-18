@@ -35,7 +35,7 @@ class DownloadAllTeamsAction extends Action
 
         $data[] = [
             ['value' => 'ID', 'style' => ['font-weight' => 'bold', 'width' => 11]],
-            ['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 11]],
+            ['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 25]],
         ];
 
        foreach ($teams as $team) {

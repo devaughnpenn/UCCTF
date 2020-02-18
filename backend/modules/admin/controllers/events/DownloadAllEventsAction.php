@@ -34,18 +34,18 @@ class DownloadAllEventsAction extends Action
         $data[] = [];
 
         $data[] = [
-            ['value' => 'Name',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Name',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Event Date',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Event Start Time',  'style' => ['font-weight' => 'bold', 'width' => 25]],
             ['value' => 'Event End Time',  'style' => ['font-weight' => 'bold', 'width' => 30]],
-            ['value' => 'Status',  'style' => ['font-weight' => 'bold', 'width' => 100]],
-            ['value' => 'Description',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'Status',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Description',  'style' => ['font-weight' => 'bold', 'width' => 50]],
             ['value' => 'Updated At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'User ID',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 25]],
-            ['value' => 'Group By Level',  'style' => ['font-weight' => 'bold', 'width' => 25]],
+            ['value' => 'User ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Updater ID',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Created At',  'style' => ['font-weight' => 'bold', 'width' => 10]],
+            ['value' => 'Group By Level',  'style' => ['font-weight' => 'bold', 'width' => 10]],
 
         ];
 
