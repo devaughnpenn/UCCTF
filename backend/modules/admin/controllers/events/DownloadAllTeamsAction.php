@@ -34,11 +34,13 @@ class DownloadAllTeamsAction extends Action
         $data[] = [];
 
         $data[] = [
+            ['value' => 'ID', 'style' => ['font-weight' => 'bold', 'width' => 11]],
             ['value' => 'Teams', 'style' => ['font-weight' => 'bold', 'width' => 11]],
         ];
 
        foreach ($teams as $team) {
             $data[] = [
+                ['value' => $team['id']],
                 ['value' => $team['name']],
             ];
         }
