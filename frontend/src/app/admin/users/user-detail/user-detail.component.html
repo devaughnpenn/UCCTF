@@ -39,7 +39,7 @@
 
           <div class="form-row">
             <div class="form-row__label">
-              Email *
+              Email
             </div>
             <div class="form-row__field" [ngClass]="{hasError: dataErrors['email']}">
               <input class="form-control" type="text" name="email" [(ngModel)]="dataUser.email">
@@ -71,10 +71,12 @@
             </div>
           </div>
 
+          <div style="font-size: 14px; color: gray; padding-top: 30px; font-style: italic;">Reset Password</div>
+
           <div class="password-group">
             <div class="form-row">
               <div class="form-row__label">
-                Password {{dataUser.id == 0 ? '*' : ''}}
+                New Password {{dataUser.id == 0 ? '*' : ''}}
               </div>
               <div class="form-row__field" [ngClass]="{hasError: dataErrors['password']}">
                 <input class="form-control" type="password" name="password" [(ngModel)]="dataUser.password">

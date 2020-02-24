@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaPageService } from '../../core/meta-page.service';
 import { WoFlashService } from '@app/wo-module/wo-flash/wo-flash.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { WoBreadCrumbsService } from '@app/wo-module/wo-breadcrumbs/wo-breadcrumbs.service';
+import { ApiAdminService } from '@app/share/api-admin.service';
+import { environment } from '../../../environments/environment';
+import { WoDialogService } from '@app/wo-module/wo-dialog/wo-dialog.service';
+import { AdminAccessToTeamsComponent } from '@app/modal/admin-access-to-teams/admin-access-to-teams.component';
+import { AuthService } from '@app/auth/auth.service';
 
 @Component({
     templateUrl: 'download.component.html',
     styleUrls: ['download.component.css']
 })
 export class DownloadComponent implements OnInit {
+
     constructor (
-        private metaPage: MetaPageService,
         private woFlash: WoFlashService,
         private router: Router,
+        private activeRoute: ActivatedRoute,
         private breadcrumbs: WoBreadCrumbsService,
+        private metaPage: MetaPageService,
+        private api: ApiAdminService,
+        private dialog: WoDialogService,
+        private auth: AuthService,
 
     ) {
         this.metaPage.setTitle('Download Data');
@@ -29,4 +39,23 @@ export class DownloadComponent implements OnInit {
         this.woFlash.show();
         this.metaPage.setTitle('Download');
     }
+
+    doDownloadUsers() {
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-users?&access-token=' + this.auth.getToken();
+    }
+    doDownloadTeams(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-teams?&access-token=' + this.auth.getToken();
+    }
+    doDownloadEvents(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-events?&access-token=' + this.auth.getToken();
+    }
+    doDownloadQuestions(){
+        window.location.href = environment.API_BASE_URL +
+        '/admin/events/download-all-questions?&access-token=' + this.auth.getToken();
+    }
+
+
 }

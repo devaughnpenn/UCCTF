@@ -1,72 +1,42 @@
-<div class="c-signup">
-    <section class="content-header">
-      <h1>Sign Up</h1>
-    </section>
+<div class="c-teams-list__wrapper">
+    <div class="c-teams-list">
+        <div class="c-teams-list__title">
+            Create a Team
+        </div>
+        <wo-flash></wo-flash>
+        <i><h1>(Optional) Upload a Team Emblem:</h1></i>
+        <div class="form-row">
+            <div>
+                <wo-avatar (changeImage)="onAvatarChanged($event)" [woId]="dataForm['avatar_file_id'] || null" [woSrc]="api.baseUrl + '/teams/avatar'"></wo-avatar>
+            </div>
+        </div>
 
-    <div class="form" *ngIf="isConfirm == 0">
-        <form action="javascript:void(0)" (ngSubmit)="doSubmit()">
-            <div class="form-row">
-                <div class="form-label required">
-                    Username
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.username}" [(ngModel)]="dataForm['username']" type="text" name="signup[username]">
-                    <div [ngClass]="{show: formErrors?.username}" class="label-error">
-                        {{formErrors?.username}}
-                    </div>
-                </div>
+        <div class="form-row">
+            <div class="form-label">
+                Name <i class="ico-star">*</i>
             </div>
-            <div class="form-row">
-                <div class="form-label required">
-                    Email
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.email}" [(ngModel)]="dataForm['email']" type="text" name="signup[email]">
-                    <div [ngClass]="{show: formErrors?.email}" class="label-error">
-                        {{formErrors?.email}}
-                    </div>
-                </div>
+            <div class="form-field" [ngClass]="{hasError: dataErrors['name']}">
+                <input class="form-control" type="text" [(ngModel)]="dataForm['name']">
             </div>
-            <div class="form-row">
-                <div class="form-label required">
-                    Password
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.password}" [(ngModel)]="dataForm['password']" type="password" name="signup[password]">
-                    <div [ngClass]="{show: formErrors?.password}" class="label-error">
-                        {{formErrors?.password}}
-                    </div>
-                </div>
+        </div>
+        <div class="form-row">
+            <div class="form-label">
+                Status
             </div>
-            <div class="form-row">
-                <div class="form-label required">
-                    Confirm Password
-                </div>
-                <div class="form-field">
-                    <input class="form-control" [ngClass]="{'hasError': formErrors?.password_repeat}" [(ngModel)]="dataForm['password_repeat']" type="password" name="signup[password_repeat]">
-                    <div [ngClass]="{show: formErrors?.password_repeat}" class="label-error">
-                        {{formErrors?.password_repeat}}
-                    </div>
-                </div>
+            <div class="form-field">
+                <select class="form-control" name="status" [(ngModel)]="dataForm['status']">
+                    <option [value]="0">Active</option>
+                    <option [value]="2">Blocked</option>
+                    <option [value]="1">Deleted</option>
+                </select>
             </div>
+        </div>
 
-            <div class="form-row">
-                <div class="form-label"></div>
-                <button type="submit" class="btn btn-primary">
-                    Create New Account
-                </button>
-            </div>
-
-            <div class="form-row">
-                <div class="form-label"></div>
-                <a routerLink="/admin/login">
-                    Are you an administrator? Login here.
-                </a>
-            </div>
-        </form>
-    </div>
-
-    <div *ngIf="isConfirm == 1">
-        An email will also be sent to your address to confirm that your registration have completed successfully.
+        <div class="form-row">
+            <a href="javascript:void(0)" (click)="doSave()" class="btn btn-primary">
+                Save
+            </a>
+            <button (click)="doCancel()" class="btn btn-default">Back to Quiz Login</button>
+        </div>
     </div>
 </div>

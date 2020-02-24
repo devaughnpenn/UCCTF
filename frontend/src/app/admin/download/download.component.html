@@ -12,7 +12,24 @@
                 </div>
         </div>
     </div>
-    <div class="content">
-        <button style="color:blue;">Download</button>
-        </div>
+
+    <div class="c-groups__top_buttons btn-group" style="padding-left: 15px; color: white;">
+        
+        <a class="btn btn-secondary" (click)="doDownloadUsers()">
+            <i class="fa fa-user-secret" aria-hidden="true"></i>
+            Download Users (*.xlsx)</a>
+        
+        <a class="btn btn-secondary" (click)="doDownloadTeams()">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            Download Teams (*.xlsx)</a>
+        
+        <a class="btn btn-secondary" (click)="doDownloadEvents()">
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+            Download Events (*.xlsx)</a>
+        
+        <a class="btn btn-secondary" (click)="doDownloadQuestions()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            Download Challenge Repository (*.xlsx)</a>
+    </div>
+
 </div>
