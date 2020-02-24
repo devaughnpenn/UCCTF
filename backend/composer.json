@@ -28,7 +28,8 @@
         "ext-gd": "*",
         "workerman/workerman": "^3.5",
         "ext-json": "*",
-        "phpoffice/phpexcel": "^1.8"
+        "phpoffice/phpexcel": "^1.8",
+        "swiftmailer/swiftmailer": "^5.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

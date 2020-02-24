@@ -125,7 +125,7 @@ wo-breadcrumbs {
 }
 
 .sidebar-menu a {
-    color: #b8c7ce;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -136,7 +136,7 @@ wo-breadcrumbs {
 
 .sidebar-menu > li:hover > a,
 .sidebar-menu > li.active > a {
-    color: #fff;
+    color: #0a0b0c;
     background: #e71329;
     border-left-color: #e71313;
     position: relative;
