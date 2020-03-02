@@ -45,12 +45,14 @@ mv composer.phar /usr/local/bin/composer
 ```
 
 ### Installing dependencies
+cd to the project Backend folder.
 ```bash
 $ cd app_path
 $ composer install
 ```
 
 ### Add app config file
+cd to the project Backend folder.
 ```bash
 $ cd app_path
 $ cp .env.example .env
@@ -69,22 +71,26 @@ DB_PASSWORD      = dbpass
 ```
 
 ### Configuring RBAC
+cd to project Backend folder.
 ```bash
 $ cd app_path
 $ ./yii migrate --migrationPath=@yii/rbac/migrations/
 ```
 ### Run database migration.
+cd to project Backend folder.
 ```bash
 $ cd app_path
 $ ./yii migrate
 ```
 
 ### You can install npm by shell script
+cd to the project Frontend folder.
 ```bash
 # curl -s https://nodejs.org/dist/v10.12.0/node-v10.12.0-linux-x64.tar.gz | sudo tar -zx --strip-components=1
 ```
 
 ### Installing dependencies via npm for frontend
+cd to the project Frontend folder.
 ```bash
 $ npm install
 ```
