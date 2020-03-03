@@ -38,6 +38,8 @@ class Questions extends ActiveRecord
     const BLOCKED = 1;
     const DELETED = 2;
     const STATUSES = [0 => 'Active', 1 => 'Blocked', 2 => 'Deleted'];
+   
+    const CATEGORY = [0 => 'Steganography', 1 => 'Trivia', 2 => 'Forensics', 3 => 'Decoding', 4 => 'Misc.'];
 
     const TYPES = [0 => 'Multiple choice', 1 => 'Checkboxes', 2 => 'Dropdown', 3 => 'Open answer'];
     /**
@@ -57,7 +59,7 @@ class Questions extends ActiveRecord
             [['status'], 'default', 'value' => Questions::ACTIVE],
             [['title', 'status', 'user_id', 'level'], 'required'],
             [['title', 'description'], 'string'],
-            [['status', 'user_id', 'updater_id', 'type', 'file_id', 'show_description', 'is_library_question'], 'integer'],
+            [['status', 'user_id', 'updater_id', 'type', 'file_id', 'category', 'show_description', 'is_library_question'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['points'], 'number'],
             [['level'], 'number', 'min' => 1, 'integerOnly'=>true],
@@ -90,6 +92,7 @@ class Questions extends ActiveRecord
             'updated_at' => 'Updated At',
             'points' => 'Points',
             'level' => 'Level',
+            'category' => 'Category',
             'type' => 'Type',
             'file_id' => 'File ID',
             'show_description' => 'Show Description',
