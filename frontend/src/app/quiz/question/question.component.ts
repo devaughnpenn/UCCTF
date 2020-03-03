@@ -15,6 +15,7 @@ export class QuestionComponent implements OnInit {
         'description': '',
         'file_id': '',
         'type': any,
+        'category': any,
         'activeAnswers': [],
         'answer': '',
         'points': 0,
@@ -31,6 +32,14 @@ export class QuestionComponent implements OnInit {
         'Checkboxes',
         'Dropdown',
         'Open answer',
+    ];
+
+    CATEGORY = [
+        'Steganography',
+        'Trivia',
+        'Forensics',
+        'Decoding',
+        'Misc.',
     ];
 
     selectedAnswers: {};
