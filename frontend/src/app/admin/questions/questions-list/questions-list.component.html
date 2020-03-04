@@ -75,6 +75,25 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="form__advanced-search-box__item clearfix">
+                                            <div class="form__advanced-search-box__label">Category</div>
+                                            <div class="form__advanced-search-box__field">
+                                                <select class="form-control" name="category" [(ngModel)]="criteria['preFilter']['category']">
+                                                    <option value=""></option>
+                                                    <option *ngFor="let category of CATEGORY; let categoryI=index" value="{{categoryI}}">{{category}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form__advanced-search-box__item clearfix">
+                                            <div class="form__advanced-search-box__label">Level</div>
+                                            <div class="form__advanced-search-box__field">
+                                                <input class="form-control" type="text" autocomplete="off"
+                                                [(ngModel)]="criteria['preFilter']['level']" name="level">
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="form__advanced-search-box__controls">
                                         <button class="btn btn-primary">Apply Filter</button>
