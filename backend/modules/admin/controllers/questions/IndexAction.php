@@ -31,10 +31,12 @@ class IndexAction extends Action
         $query = Questions::find()->asArray();
         $query->andFilterWhere([
             'or',
+	    ['like', 'level', $model->common],
             ['like', 'title', $model->common],
             ['like', 'description', $model->common],
         ]);
         $query->andFilterWhere(['like', 'title', $model->title]);
+	$query->andFilterWhere(['like', 'level', $model->level]);
 
         // Cdate range
         if (!empty($model->created_at_from) && !empty($model->created_at_to)) {
@@ -65,6 +67,11 @@ class IndexAction extends Action
         if (in_array($model->type, array_keys(Questions::TYPES))) {
             $query->andFilterWhere(['type' => $model->type]);
         }
+
+	if (in_array($model->category, array_keys(Questions::CATEGORY))) {
+	    $query->andFilterWhere(['category' => $model->category]);
+	}
+	
         $query->andWhere(["is_library_question" => "1"]);
         $provider = new ActiveDataProvider([
             'query' => $query,
@@ -95,9 +102,11 @@ class IndexAction extends Action
             'created_at_from' => null,
             'created_at_to' => null,
             'status' => null,
+	    'level' => null,
+	     'category' => null,
             'type' => null,
         ]);
-        $model->addRule(['title', 'common', 'created_at_from', 'created_at_to', 'status', 'type'], 'trim');
+        $model->addRule(['title', 'common', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'category'], 'trim');
         return $model;
     }
 }
