@@ -19,8 +19,8 @@ Run the following php command:
 ### **Step 1.** Set up the IDE Development Environment:
 Open a Visual Studio Code terminal, and go to the environments folder and create a new environment file:
 ```bash
-$ cd frontend/src/environments
-$ cp environment.ts environment.loc.ts
+> cd frontend/src/environments
+> cp environment.ts environment.loc.ts
 ```
 
 ### **Step 2.** Edit the environment.loc.ts file:
