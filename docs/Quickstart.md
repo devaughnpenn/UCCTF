@@ -1,4 +1,7 @@
 # Quickstart
+
+(Make sure you've completed the steps of the **Installation** doc first before going through this Quickstart.)
+
 This project works best with the Visual Studio Code IDE.
 
 ## Running the Backend.
@@ -15,13 +18,13 @@ Run the following php command:
 ## Running the Frontend.
 
 ### **Step 1.** Set up the IDE Development Environment:
-Open a Visual Studio Code terminal, and go to the environments folder and create a new environment file:
+Open a Visual Studio Code terminal, cd to the environments folder and create a new environment file:
 ```bash
-$ cd frontend/src/environments
-$ cp environment.ts environment.loc.ts
+> cd frontend/src/environments
+> cp environment.ts environment.loc.ts
 ```
 
-### **Step 2.** Edit the environment.loc.ts file:
+### **Step 2.** Edit the environment.loc.ts file in VSCode:
 ```js
 ...
 API_BASE_URL: "http://your-url.loc/api",
@@ -36,10 +39,10 @@ API_BASE_URL: "http://192.168.1.1/api",
 ...
 ```
 
-### **Step 3.** Return to frontend folder, then run the local server:
+### **Step 3.** Return to frontend folder and run the local server in the VSCode terminal:
 ```bash
-$ cd frontend
-$ npm run local
+> cd frontend
+> npm run local
 ```
 The `npm run local` command launches the server, watches your files, and rebuilds the app as you make changes to those files.
 
