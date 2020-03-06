@@ -1,50 +1,65 @@
 <?php
-require_once './vendor/autoload.php';
- 
-try {
+
+namespace app\modules\admin\controllers\events;
+
+use Yii;
+use yii\base\Action;
+use yii\swiftmailer\Mailer;
+
+class SendEmailAction extends Action
+{
+
+public function run()
+{
+ try {
     // Create the SMTP Transport
-    $transport = (new Swift_SmtpTransport('smtp.mailtrap.io', 2525))
+    $transport = \Swift_SmtpTransport::newInstance('smtp.mailtrap.io', 2525)
         ->setUsername('729c9d3d03791a')
         ->setPassword('656db6add69b88');
  
     // Create the Mailer using your created Transport
-    $mailer = new Swift_Mailer($transport);
+    $mailer = \Swift_Mailer::newInstance($transport);
  
     // Create a message
-    $message = new Swift_Message();
+    $message = \Swift_Message::newInstance();
  
     // Set a "subject"
     $message->setSubject('Demo message using the SwiftMailer library.');
  
     // Set the "From address"
-    $message->setFrom(['sender@gmail.com' => 'sender name']);
+    $message->setFrom(['reillytr@mail.uc.edu' => 'sender name']);
  
     // Set the "To address" [Use setTo method for multiple recipients, argument should be array]
-    $message->addTo('recipient@gmail.com','recipient name');
+    $message->addTo('reillytr@mail.uc.edu','recipient name');
  
     // Add "CC" address [Use setCc method for multiple recipients, argument should be array]
-    $message->addCc('recipient@gmail.com', 'recipient name');
+    //$message->addCc('recipient@example.com', 'recipient name');
  
     // Add "BCC" address [Use setBcc method for multiple recipients, argument should be array]
-    $message->addBcc('recipient@gmail.com', 'recipient name');
+    //$message->addBcc('recipient@example.com', 'recipient name');
  
     // Add an "Attachment" (Also, the dynamic data can be attached)
-    $attachment = Swift_Attachment::fromPath('example.xls');
-    $attachment->setFilename('report.xls');
-    $message->attach($attachment);
+    //$attachment = Swift_Attachment::fromPath('example.xls');
+    //$attachment->setFilename('report.xls');
+    //$message->attach($attachment);
  
     // Add inline "Image"
-    $inline_attachment = Swift_Image::fromPath('nature.jpg');
-    $cid = $message->embed($inline_attachment);
+    //$inline_attachment = Swift_Image::fromPath('nature.jpg');
+    //$cid = $message->embed($inline_attachment);
  
     // Set the plain-text "Body"
     $message->setBody("This is the plain text body of the message.\nThanks,\nAdmin");
  
     // Set a "Body"
-    $message->addPart('This is the HTML version of the message.<br>Example of inline image:<br><img src="'.$cid.'" width="200" height="200"><br>Thanks,<br>Admin', 'text/html');
+    //$message->addPart('This is the HTML version of the message.<br>Example of inline image:<br><img src="'.$cid.'" width="200" height="200"><br>Thanks,<br>Admin', 'text/html');
  
     // Send the message
     $result = $mailer->send($message);
-} catch (Exception $e) {
-  echo $e->getMessage();
+   }
+   catch (Exception $e) {
+      echo $e->getMessage();
+   }
+
+}
+
 }
