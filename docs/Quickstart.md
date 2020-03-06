@@ -1,4 +1,6 @@
 # Quickstart
+(Make sure you've completed the steps of the Installation doc first before going through this Quickstart.)
+
 This project works best with the Visual Studio Code IDE.
 
 ## Running the Backend.
