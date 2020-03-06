@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaPageService } from '../../core/meta-page.service';
 import { WoFlashService } from '@app/wo-module/wo-flash/wo-flash.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { WoBreadCrumbsService } from '@app/wo-module/wo-breadcrumbs/wo-breadcrumbs.service';
+import { ApiAdminService } from '@app/share/api-admin.service';
 import { environment } from '../../../environments/environment';
+import { WoDialogService } from '@app/wo-module/wo-dialog/wo-dialog.service';
+import { AdminAccessToTeamsComponent } from '@app/modal/admin-access-to-teams/admin-access-to-teams.component';
 import { AuthService } from '@app/auth/auth.service';
 
 
@@ -13,10 +16,13 @@ import { AuthService } from '@app/auth/auth.service';
 })
 export class EmailComponent implements OnInit {
     constructor (
-        private metaPage: MetaPageService,
         private woFlash: WoFlashService,
         private router: Router,
+        private activeRoute: ActivatedRoute,
         private breadcrumbs: WoBreadCrumbsService,
+        private metaPage: MetaPageService,
+        private api: ApiAdminService,
+        private dialog: WoDialogService,
         private auth: AuthService,
 
     ) {
