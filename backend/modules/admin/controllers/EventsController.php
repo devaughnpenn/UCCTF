@@ -27,6 +27,7 @@ class EventsController extends Controller
             'download-all-teams' => 'app\modules\admin\controllers\events\DownloadAllTeamsAction',
             'download-all-events' => 'app\modules\admin\controllers\events\DownloadAllEventsAction',
             'download-all-questions' => 'app\modules\admin\controllers\events\DownloadAllQuestionsAction',
+            'send-email' => 'app\modules\admin\controllers\events\SendEmailAction',
 
         ];
     }
