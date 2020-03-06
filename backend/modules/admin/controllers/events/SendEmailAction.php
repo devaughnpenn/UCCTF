@@ -27,10 +27,10 @@ public function run()
     $message->setSubject('Demo message using the SwiftMailer library.');
  
     // Set the "From address"
-    $message->setFrom(['reillytr@mail.uc.edu' => 'sender name']);
+    $message->setFrom(['Administrator@OhioCyberRangeInstitute.org' => 'sender name']);
  
     // Set the "To address" [Use setTo method for multiple recipients, argument should be array]
-    $message->addTo('reillytr@mail.uc.edu','recipient name');
+    $message->addTo('CTFplayer@example.com','recipient name');
  
     // Add "CC" address [Use setCc method for multiple recipients, argument should be array]
     //$message->addCc('recipient@example.com', 'recipient name');
