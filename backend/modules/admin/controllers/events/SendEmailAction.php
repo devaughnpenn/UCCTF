@@ -13,9 +13,12 @@ public function run()
 {
  try {
     // Create the SMTP Transport
+    //(This is set as a mailtrap server for testing purposes.)
     $transport = \Swift_SmtpTransport::newInstance('smtp.mailtrap.io', 2525)
-        ->setUsername('729c9d3d03791a')
-        ->setPassword('656db6add69b88');
+        //set as your mailtrap username
+        ->setUsername('')
+        //set as your mailtrap password
+        ->setPassword('');
  
     // Create the Mailer using your created Transport
     $mailer = \Swift_Mailer::newInstance($transport);
