@@ -1,4 +1,5 @@
 # Quickstart
+
 (Make sure you've completed the steps of the **Installation** doc first before going through this Quickstart.)
 
 This project works best with the Visual Studio Code IDE.
@@ -23,7 +24,7 @@ Open a Visual Studio Code terminal, and go to the environments folder and create
 > cp environment.ts environment.loc.ts
 ```
 
-### **Step 2.** Edit the environment.loc.ts file:
+### **Step 2.** Edit the environment.loc.ts file in Visual Studio Code:
 ```js
 ...
 API_BASE_URL: "http://your-url.loc/api",
