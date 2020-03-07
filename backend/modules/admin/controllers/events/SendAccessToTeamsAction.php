@@ -8,6 +8,7 @@ use app\models\Teams;
 use app\models\EventTeams;
 use app\models\TeamUsers;
 use app\models\Events;
+use yii\swiftmailer\Mailer;
 
 /**
  * @inheritdoc
