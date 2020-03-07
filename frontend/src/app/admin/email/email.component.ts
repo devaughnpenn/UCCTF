@@ -15,6 +15,8 @@ import { AuthService } from '@app/auth/auth.service';
     styleUrls: ['email.component.css']
 })
 export class EmailComponent implements OnInit {
+    isProcess = false;
+    currIndex = 0;
     constructor (
         private woFlash: WoFlashService,
         private router: Router,
@@ -41,8 +43,16 @@ export class EmailComponent implements OnInit {
     }
 
     sendEmail(){
-        window.location.href = environment.API_BASE_URL +
-        '/admin/events/send-email?&access-token=' + this.auth.getToken();
+        //window.location.href = environment.API_BASE_URL +
+        //'/admin/events/send-email?&access-token=' + this.auth.getToken();
+
+        this.api.send(window.location.href = environment.API_BASE_URL +
+            '/admin/events/send-email?&access-token=' + this.auth.getToken());
+
+        this.woFlash.addMessage('The operation was done!');
+        this.woFlash.show('sendEmail');
+        this.isProcess = false;
+        this.currIndex = 0;
     }
 
 }
