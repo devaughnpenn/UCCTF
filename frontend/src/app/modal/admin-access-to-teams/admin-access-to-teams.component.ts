@@ -1,8 +1,6 @@
 import { Component, Input, AfterViewInit} from '@angular/core';
 import { IWoDialogComponent } from '../../wo-module/wo-dialog/wo-dialog.interface';
 import { ApiAdminService } from '@app/share/api-admin.service';
-import { AuthService } from '@app/auth/auth.service';
-import { environment } from '../../../environments/environment';
 
 import { WoDialogService } from '@app/wo-module/wo-dialog/wo-dialog.service';
 import { WoDialogAlertComponent } from '@app/wo-module/wo-dialog/wo-dialog-alert/wo-dialog-alert.component';
@@ -25,7 +23,6 @@ export class AdminAccessToTeamsComponent implements AfterViewInit, IWoDialogComp
         private api: ApiAdminService,
         private dialogService: WoDialogService,
         private woFlash: WoFlashService,
-        private auth: AuthService,
     ) {}
 
     ngAfterViewInit () {
