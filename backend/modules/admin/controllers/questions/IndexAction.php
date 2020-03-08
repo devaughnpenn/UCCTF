@@ -56,14 +56,18 @@ class IndexAction extends Action
                 $query->andWhere(['<', 'created_at', $created_at_to->format('Y-m-d 23:59:59')]);
             }
         }
-
+        //difficulty level
+        if (in_array($model->level, array_keys(Questions::LEVEL))) {
+            $query->andFilterWhere(['level' => $model->level]);
+        }
+        //status "active or blocked"
         if (in_array($model->status, array_keys(Questions::STATUSES))) {
             $query->andFilterWhere(['status' => $model->status]);
         }
         if ($model->status == '') {
             $query->andWhere(['<>', "status", Questions::DELETED]);
         }
-
+        //question type "multiple choice, dropdown, open answer"
         if (in_array($model->type, array_keys(Questions::TYPES))) {
             $query->andFilterWhere(['type' => $model->type]);
         }
@@ -79,7 +83,7 @@ class IndexAction extends Action
                 'pageSize' => 20
             ],
         ]);
-
+        
         $rows = [];
         foreach ($provider->getModels() as $row) {
             $rows[] = $row;
@@ -105,6 +109,7 @@ class IndexAction extends Action
 	    'level' => null,
 	     'category' => null,
             'type' => null,
+            'level' => null,
         ]);
         $model->addRule(['title', 'common', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'category'], 'trim');
         return $model;

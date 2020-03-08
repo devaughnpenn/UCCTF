@@ -65,6 +65,10 @@ class FindAction extends Action
             $query->andWhere(['!=', 'status', 'deleted']);
         }
 
+        if (!empty($condition['level'])){
+            $query->andWhere(['level' => $condition['level']]);
+        }
+
         // Cdate range
         if (!empty($condition['cdate_from']) && !empty($condition['cdate_to'])) {
             $cdate_from = \DateTime::createFromFormat('m/d/Y', $condition['cdate_from']);

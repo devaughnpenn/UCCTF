@@ -37,6 +37,7 @@ class Controller extends \yii\rest\Controller
     public function beforeAction($action)
     {
         header("Access-Control-Allow-Origin: *");
+        //header("Access-Control-Allow-Origin: https://cincinnati.of1.weborchestra.org/api/admin/mail/send-mail?");
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
 

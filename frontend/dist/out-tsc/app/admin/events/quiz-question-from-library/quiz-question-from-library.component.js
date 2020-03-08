@@ -25,7 +25,7 @@ var QuizQuestionFromLibraryComponent = /** @class */ (function () {
             page: 0,
             defSort: '',
             sort: '',
-            filterQuery: ['title', 'created_at_from', 'created_at_to', 'status', 'type', 'common'],
+            filterQuery: ['title', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'common'],
             preFilter: {},
             filter: {},
         };

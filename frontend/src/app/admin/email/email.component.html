@@ -1,3 +1,4 @@
+
 <div class="c-email">
     <section class="content-header">
       <h1>Send Email</h1>
@@ -6,14 +7,109 @@
 
     <div class="content">
         <div class="box">
-            <div class="box-body">
-                Send a welcome email to new teams.
-                </div>
+            <label>Email Subject:   </label>
+            <input type="text" name="mailSubject" placeholder="Subject...." [(ngModel)]="mailSubject"><br>
         </div>
+        <label>Message:</label><br>
+        <textarea rows="10" cols="60" placeholder="Enter Your Email Message...." [(ngModel)]="mailMessage" name="mailMessage">
+        </textarea>
+        
     </div>
+    <div class="box-body">
+        <label>Recipients:    </label><br>
+        <form action="javascript:void(0);" (submit)="doSearch()">
+          <div class="form__search-box" [ngClass]="{'advanced-filter': advanced_filters}">
+            <div class="form__search-box__common clearfix">
+              <div class="input-group d-inline">
+                <input class="form-control" type="text" name="common_search" [(ngModel)]="search['inpCommon']" placeholder="Search..." >
+                <button class="btn btn-secondary">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+              <a href="javascript:void(0);" (click)="toggleAdvancedFilter()" class="form__search-box__advanced-btn">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                Advanced Search
+              </a>
+            </div>
 
-    <a class="btn btn-primary" style="color:white; padding-left: 55px;"(click)="sendEmail()">
-        Send Email
-    </a>
+            <div class="form__advanced-search-box">
+              <div class="form__advanced-search-box__body clearfix">
+
+                <div class="form__advanced-search-box__item clearfix">
+                  <div class="form__advanced-search-box__label">Username</div>
+                  <div class="form__advanced-search-box__field">
+                    <input class="form-control" type="text" autocomplete="off" [(ngModel)]="search.condition['username']" name="username">
+                  </div>
+                </div>
+
+                <div class="form__advanced-search-box__item clearfix">
+                  <div class="form__advanced-search-box__label">Name</div>
+                  <div class="form__advanced-search-box__field">
+                    <input class="form-control" type="text" [(ngModel)]="search.condition['name']" name="name">
+                  </div>
+                </div>
+
+                <div class="form__advanced-search-box__item clearfix">
+                  <div class="form__advanced-search-box__label">Email</div>
+                  <div class="form__advanced-search-box__field">
+                    <input class="form-control" type="text" [(ngModel)]="search.condition['email']" name="email">
+                  </div>
+                </div>
+
+              </div>
+              <div class="form__advanced-search-box__controls">
+                <button class="btn btn-primary">Apply Filter</button>
+                <button (click)="resetFilter($event)" class="btn btn-default">Reset Filter</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+        <wo-flash block="userlist"></wo-flash>
+
+        <div [ngClass]="{'box-loading': loading}">
+          <table class="table table-bordered table-sm table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width: 10px;">
+                  <wo-checkbox (click)="checkAllRows($event)" [(ngModel)]="all_check"></wo-checkbox>
+                </th>
+                <th>
+                    <wo-sort [woSortActive]="search.sort" woSortStart="username" (sort)="sortBy($event)">Username</wo-sort>
+                </th>
+                <th>
+                    <wo-sort [woSortActive]="search.sort" woSortStart="name" (sort)="sortBy($event)">Name</wo-sort>
+                </th>
+                <th>
+                    <wo-sort [woSortActive]="search.sort" woSortStart="email" (sort)="sortBy($event)">Email</wo-sort>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows">
+                <td>
+                  <wo-checkbox [checked]="row.is_checked" [(ngModel)]="row.is_checked"></wo-checkbox>
+                </td>
+                <td class="td-link" (click)="row.is_checked">{{row.username}}</td>
+                <td class="td-link" (click)="row.is_checked">{{row.name}}</td>
+                <td class="td-link" (click)="row.is_checked">{{row.email}}</td>
+              </tr>
+              <tr *ngIf="rows.length == 0" class="disabled">
+                <td colspan="8">
+                  {{loading ? 'Loading ...' : 'No matching records found'}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <wo-paginator *ngIf="last_page>1" [last]="last_page" [current]="curr_page" (changePage)="toPage($event)"></wo-paginator>
+        </div>
+      </div>
+    <div class="content">
+      <button class="btn btn-primary" (click)="doSend()">Send Email</button>
+      <button class="btn btn-secondary" (click)="doCancel($event)" href="javascript:;">Cancel</button>
+    </div>
 
 </div>
