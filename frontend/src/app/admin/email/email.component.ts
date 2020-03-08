@@ -8,6 +8,7 @@ import { environment } from '../../../environments/environment';
 import { WoDialogService } from '@app/wo-module/wo-dialog/wo-dialog.service';
 import { AdminAccessToTeamsComponent } from '@app/modal/admin-access-to-teams/admin-access-to-teams.component';
 import { AuthService } from '@app/auth/auth.service';
+import { WoDialogConfirmComponent } from '@app/wo-module/wo-dialog/wo-dialog-confirm/wo-dialog-confirm.component';
 
 
 @Component({
@@ -43,16 +44,15 @@ export class EmailComponent implements OnInit {
     }
 
     sendEmail(){
-        //window.location.href = environment.API_BASE_URL +
-        //'/admin/events/send-email?&access-token=' + this.auth.getToken();
-
-        this.api.send(window.location.href = environment.API_BASE_URL +
-            '/admin/events/send-email?&access-token=' + this.auth.getToken());
-
-        this.woFlash.addMessage('The operation was done!');
-        this.woFlash.show('sendEmail');
-        this.isProcess = false;
-        this.currIndex = 0;
+        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send a welcome email to players?'});
+        dialogRef.afterClosed().subscribe(result => {
+            if (result === true) {
+                this.api.send('events/send-email?&access-token=' + this.auth.getToken()).then(res => {
+                });
+                this.woFlash.addMessage('The operation was done!');
+                this.woFlash.show('sendEmail');
+            }
+        });
     }
 
 }
