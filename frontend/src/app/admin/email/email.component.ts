@@ -4,8 +4,11 @@ import { WoFlashService } from '@app/wo-module/wo-flash/wo-flash.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WoBreadCrumbsService } from '@app/wo-module/wo-breadcrumbs/wo-breadcrumbs.service';
 import { ApiAdminService } from '@app/share/api-admin.service';
+import { environment } from '../../../environments/environment';
 import { WoDialogService } from '@app/wo-module/wo-dialog/wo-dialog.service';
 import { WoDialogAlertComponent } from '@app/wo-module/wo-dialog/wo-dialog-alert/wo-dialog-alert.component';
+import { AdminAccessToTeamsComponent } from '@app/modal/admin-access-to-teams/admin-access-to-teams.component';
+import { AuthService } from '@app/auth/auth.service';
 
 // this module is supposed to allow admin users to select any participant that they wish to send an email 
 //to and read the "subject" and "message" boxes to then send a custom email. !!!THIS DOES NOT WORK!!!!!
@@ -34,22 +37,20 @@ export class EmailComponent implements OnInit {
     users = [];
     currIndex=0;
     isProcess=false;
-
-    private subject:string;
-    private message:string;
-    private username: string;
+    mailSubject= '';
+    mailMessage= '';
 
     rows = [];
 
     constructor (
-        private metaPage: MetaPageService,
         private woFlash: WoFlashService,
         private router: Router,
         private activeRoute: ActivatedRoute,
-        private api: ApiAdminService,
         private breadcrumbs: WoBreadCrumbsService,
+        private metaPage: MetaPageService,
+        private api: ApiAdminService,
         private dialog: WoDialogService,
-        private dialogService: WoDialogService,
+        private auth: AuthService,
 
     ) {
         this.metaPage.setTitle('Send Email');
@@ -153,6 +154,11 @@ export class EmailComponent implements OnInit {
         this.advanced_filters = !this.advanced_filters;
     }
 
+    doSearch () {
+        this.search.common = this.search.inpCommon;
+        this.toActualUrl();
+    }
+
     resetFilter(event: Event) {
         event.preventDefault();
         for (const prop of Object.keys(this.search.condition)) {
@@ -174,7 +180,6 @@ export class EmailComponent implements OnInit {
     }
 
     doSend() {
-        //this.api.send('mail/send-mail', {}).then(res => {})
         let count = 0;
         this.woFlash.hide();
         const items = [];
@@ -186,7 +191,7 @@ export class EmailComponent implements OnInit {
         }
         if (items.length === 0) {
             setTimeout(() => {
-                this.dialogService.open(WoDialogAlertComponent, {message: 'You must select user(s).', css: {top: '130px'}});
+                this.dialog.open(WoDialogAlertComponent, {message: 'You must select user(s).', css: {top: '130px'}});
             }, 10);
         } else {
             this.currIndex = 0;
@@ -195,49 +200,14 @@ export class EmailComponent implements OnInit {
         }
     }
 
-    sendEmail() {
-        if (this.isProcess === true) {
-            if (this.currIndex < this.users.length) {
-                if (this.users[this.currIndex]) {
-                    if (this.users[this.currIndex].is_checked !== true) {
-                        this.currIndex++;
-                        this.sendEmail();
-                    } else {
-                        this.api.send(
-                            'mail/send-mail',
-                            {subject: this.subject,
-                            message: this.message},
-                        ).then(res => {
-                            if (res['code'] === 200) {
-                                this.users[this.currIndex].status = 'OK';
-                                this.users[this.currIndex].is_ok = true;
-                                this.users[this.currIndex].is_fail = false;
-                            } else {
-                                this.users[this.currIndex].status = 'ERROR';
-                                this.users[this.currIndex].is_ok = false;
-                                this.users[this.currIndex].is_fail = true;
-                            }
-                            this.currIndex++;
-                            this.sendEmail();
-                        }).catch(err => {
-                            this.isProcess = false;
-                            this.currIndex = 0;
-                            this.woFlash.addError('Oops! Something went wrong!');
-                            this.woFlash.show('sendEmail');
-                        });
-                    }
-                }
-            } else {
-                this.woFlash.addMessage('Message Sent!');
-                this.woFlash.show('sendEmail');
-                this.isProcess = false;
-                this.currIndex = 0;
-            }
-        }
-    }
-
     doCancel(event) {
         window.history.back();
         event.preventDefault();
     }
+
+    sendEmail(){
+        this.api.send(window.location.href = environment.API_BASE_URL +
+            '/admin/mail/send-mail?&access-token=' + this.auth.getToken());
+    }
+
 }

@@ -9,10 +9,10 @@
     <div class="content">
         <div class="box">
             <label>Email Subject:   </label>
-            <input type="text" name="subject" placeholder="Subject...." [(ngModel)]="subject"><br>
+            <input type="text" name="mailSubject" placeholder="Subject...." [(ngModel)]="mailSubject"><br>
         </div>
         <label>Message:</label><br>
-        <textarea rows="10" cols="60" placeholder="Enter Your Email Message...." [(ngModel)]="message">
+        <textarea rows="10" cols="60" placeholder="Enter Your Email Message...." [(ngModel)]="mailMessage" name="mailMessage">
         </textarea>
         
     </div>
@@ -109,8 +109,8 @@
         </div>
       </div>
     <div class="content">
-    <button class="btn btn-primary" (click)="doSend()" href="javascript:;">Send Email</button>
-    <button class= "btn btn-secondary" (click)="doCancel()" href="javascript:;">Cancel</button>
+      <button class="btn btn-primary" (click)="doSend()">Send Email</button>
+      <button class="btn btn-secondary" (click)="doCancel($event)" href="javascript:;">Cancel</button>
     </div>
 
 </div>

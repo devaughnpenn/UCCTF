@@ -137,15 +137,9 @@ wo-breadcrumbs {
 
 .sidebar-menu > li:hover > a,
 .sidebar-menu > li.active > a {
-<<<<<<< HEAD
-    color: #0a0b0c;
-    background: #e71329;
-    border-left-color: #e71313;
-=======
     color: #fff;
     background: #383838;
     border-left-color: #008ae6;
->>>>>>> refs/remotes/origin/master
     position: relative;
     z-index: 2;
 }

@@ -12,7 +12,6 @@ class MailController extends Controller
     public function actions()
     {
         return [
-            'find'              => 'app\modules\admin\controllers\user\FindAction',
             'send-mail'         => 'app\modules\admin\controllers\mail\SendEmailAction',
             'find-email'        => 'app\modules\admin\controllers\mail\FindEmailAction',
         ];
