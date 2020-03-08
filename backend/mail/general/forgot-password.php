@@ -8,7 +8,7 @@
 <h3>Hi <?= $username ?>,</h3>
 
 <p>
-    You requested a reminder of your password. Here it is link: <a href="<?= $link ?>">clik</a>
+    You requested a reminder of your password. Here it is link: <a href="<?= $link ?>">Click</a>
 </p>
 
 <p>

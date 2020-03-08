@@ -43,8 +43,8 @@ $config = [
 	    'transport' => [
 			'class' => 'Swift_SmtpTransport',
 			'host' => 'smtp.mailtrap.io',
-			'username' => '729c9d3d03791a',
-			'password' => '656db6add69b88',
+			'username' => 'a7c0323b51798c',
+			'password' => '4341efff73c561',
 			'port' => '2525',
 			'encryption' => 'tls',
 			],
