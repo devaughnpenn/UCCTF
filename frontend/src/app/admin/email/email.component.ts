@@ -206,8 +206,16 @@ export class EmailComponent implements OnInit {
     }
 
     sendEmail(){
+        //window.location.href = environment.API_BASE_URL +
+        //'/admin/events/send-email?&access-token=' + this.auth.getToken();
+
         this.api.send(window.location.href = environment.API_BASE_URL +
-            '/admin/mail/send-mail?&access-token=' + this.auth.getToken());
+            '/admin/events/send-email?&access-token=' + this.auth.getToken());
+
+        this.woFlash.addMessage('The operation was done!');
+        this.woFlash.show('sendEmail');
+        this.isProcess = false;
+        this.currIndex = 0;
     }
 
 }
