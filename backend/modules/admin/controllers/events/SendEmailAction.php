@@ -4,12 +4,14 @@ namespace app\modules\admin\controllers\events;
 
 use Yii;
 use yii\base\Action;
+use app\models\Teams;
+use app\models\TeamUsers;
 use yii\swiftmailer\Mailer;
 
 class SendEmailAction extends Action
 {
 
-public function run()
+/*public function run()
 {
  try {
     // Create the SMTP Transport
@@ -63,6 +65,67 @@ public function run()
       echo $e->getMessage();
    }
 
-}
+}*/
+
+
+    /**
+     * @inheritdoc
+     */
+    public function run()
+    {
+        if (Yii::$app->request->isPost) {
+            $emails = [];
+            $data = Yii::$app->request->post();
+            $team = Teams::findAll(['team_id' => $data['team_id']]);
+
+            $users = TeamUsers::find()
+                ->where(['team_id' => $data['team_id']])
+                ->andWhere(['status' => TeamUsers::STATUS_ACTIVE])
+                ->with('user')
+                ->asArray()
+                ->all();
+
+            foreach ($users as $user) {
+                if ($user['user']['status'] === 'active') {
+                    $emails[] = $user['user']['email'];
+                }
+            }
+
+            if (count($emails) > 0) {
+                $host_info = parse_url(Yii::$app->getUrlManager()->getHostInfo());
+                Yii::$app->mailer->compose()
+                ->setFrom('no-reply@' . $host_info['host'])
+                ->setTo($emails)
+                ->setSubject('Welcome to Ohio Cyber Range CTF!')
+                ->send();
+            }
+
+            return [
+                'code'     => 200,
+                'data'     => $data,
+                'users'    => $users,
+                'emails'   => $emails,
+            ];
+        } else if (Yii::$app->request->isGet) {
+            return [
+                'teams' => $this->getTeams(),
+            ];
+        } else {
+            return [];
+        }
+    }
+
+    private function getTeams()
+    {
+        $query = Teams::find()
+                    ->select([
+                        'id'             => 'teams.id',
+                        'name'           => 'teams.name',
+                    ])
+                    ->asArray();
+
+        return $query->asArray()->all();
+    }
+
 
 }
