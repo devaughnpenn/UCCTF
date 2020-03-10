@@ -197,7 +197,7 @@ export class EmailComponent implements OnInit {
         } else {
             this.currIndex = 0;
             this.isProcess = true;
-            this.sendEmail();
+            this.sendEmail(items);
         }
     }
 
@@ -206,7 +206,26 @@ export class EmailComponent implements OnInit {
         event.preventDefault();
     }
 
-    sendEmail(){
+    sendEmail(items){
+        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send email to selected player(s)?'});
+        dialogRef.afterClosed().subscribe(result => {
+            if (result === true) {
+                this.api.send('mail/send-mail',
+                {},
+                {
+                    users: items, 
+                    subject: this.mailSubject, 
+                    message: this.mailMessage
+                }).then(res => {
+                    
+                });
+                this.woFlash.addMessage('The operation was done!');
+                this.woFlash.show('sendEmail');
+            }
+        });
+    }
+
+    sendWelcomeEmail(){
         const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send a welcome email to players?'});
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
@@ -217,5 +236,4 @@ export class EmailComponent implements OnInit {
             }
         });
     }
-
 }

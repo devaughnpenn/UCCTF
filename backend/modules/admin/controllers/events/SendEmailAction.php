@@ -32,9 +32,9 @@ class SendEmailAction extends Action
                 ->setFrom('no-reply@' . $host_info['host'])
                 ->setTo($emails)
                 ->setSubject('Welcome to the Ohio Cyber Range CTF')
-		->setTextBody('Welcome to the Ohio Cyber Range Capture-the-Flag, also known as CTF! We are glad you are here.')
+		        ->setTextBody('Welcome to the Ohio Cyber Range Capture-the-Flag, also known as CTF! We are glad you are here.')
                 ->setHtmlBody('Welcome to the <b>Ohio Cyber Range</b> Capture-the-Flag, also known as CTF! We are glad you are here.')
-		->send();
+		        ->send();
             }
 
             return [
