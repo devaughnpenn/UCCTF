@@ -17,7 +17,7 @@ export class QuestionsListComponent implements OnInit {
         page: 0,
         defSort: '',
         sort: '',
-        filterQuery: ['title', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'common'],
+        filterQuery: ['title', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'category', 'common'],
         preFilter: {},
         filter: {},
     };
@@ -48,14 +48,6 @@ export class QuestionsListComponent implements OnInit {
         'Decoding',
         'Misc.',
     ];
-
-    LEVEL = [
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-    ]
 
     constructor(
         private router: Router,
