@@ -187,7 +187,7 @@ export class EmailComponent implements OnInit {
         for (let i = this.rows.length - 1; i >= 0; i--) {
             if (this.rows[i].is_checked)
             {
-                items.push(this.rows[i].id);
+                items.push(this.rows[i].email);
             }
         }
         if (items.length === 0) {
@@ -215,12 +215,17 @@ export class EmailComponent implements OnInit {
                 {
                     users: items, 
                     subject: this.mailSubject, 
-                    message: this.mailMessage
+                    message: this.mailMessage,
                 }).then(res => {
-                    
+                    if (res['code'] === 200) {
+                        this.woFlash.addMessage('The operation was done!');
+                        this.woFlash.show('sendEmail');
+                    }else{
+                        this.woFlash.addMessage('Message sending fail.');
+                        this.woFlash.show('sendEmail');
+                    } 
                 });
-                this.woFlash.addMessage('The operation was done!');
-                this.woFlash.show('sendEmail');
+                
             }
         });
     }

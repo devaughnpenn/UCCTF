@@ -5,21 +5,18 @@
     </section>
     <wo-flash block="sendEmail"></wo-flash>
 
-    <button class="btn btn-outline-primary" (click)="sendWelcomeEmail()">
-      Send email to players
-  </button>
-
     <div class="content">
         <div class="box">
+            
             <label>Email Subject:   </label>
             <input type="text" name="mailSubject" placeholder="Subject...." [(ngModel)]="mailSubject"><br>
-        </div>
-        <label>Message:</label><br>
-        <textarea rows="10" cols="60" placeholder="Enter Your Email Message...." [(ngModel)]="mailMessage" name="mailMessage">
-        </textarea>
         
-    </div>
-    <div class="box-body">
+          <label>Message:</label><br>
+          <textarea rows="10" cols="60" placeholder="Enter Your Email Message...." style="padding:10px;" [(ngModel)]="mailMessage" name="mailMessage">
+          </textarea>
+        
+    
+        <div class="box-body">
         <label>Recipients:    </label><br>
         <form action="javascript:void(0);" (submit)="doSearch()">
           <div class="form__search-box" [ngClass]="{'advanced-filter': advanced_filters}">
@@ -74,7 +71,7 @@
         <wo-flash block="userlist"></wo-flash>
 
         <div [ngClass]="{'box-loading': loading}">
-          <table class="table table-bordered table-sm table-striped table-hover">
+          <table class="table table-bordered table-condensed table-striped table-hover table-sm">
             <thead>
               <tr>
                 <th style="width: 10px;">
@@ -110,10 +107,14 @@
 
           <wo-paginator *ngIf="last_page>1" [last]="last_page" [current]="curr_page" (changePage)="toPage($event)"></wo-paginator>
         </div>
-      </div>
-    <div class="content">
+        </div>
+        <div class="content">
       <button class="btn btn-primary" (click)="doSend()">Send Email</button>
       <button class="btn btn-secondary" (click)="doCancel($event)" href="javascript:;">Cancel</button>
+      <button class="btn btn-outline-primary" (click)="sendWelcomeEmail()">
+        Send Welcome Email to Players
+       </button>
+        </div>
+      </div>
     </div>
-
 </div>

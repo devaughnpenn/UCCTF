@@ -2,13 +2,27 @@
 
 namespace app\modules\admin\controllers;
 
-/**
- * @inheritdoc
- * this module is the controller for all mail api calls. this module 
- * routes different api calls to their respective backend folder.
- */
+use yii\filters\AccessControl;
+
 class MailController extends Controller
 {
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+
+        $behaviors['access'] = [
+            'class' => AccessControl::class,
+            'rules' => [
+                [
+                    'allow' => true,
+                    'roles' => ['admin'],
+                ],
+            ],
+        ];
+
+        return $behaviors;
+    }
+
     public function actions()
     {
         return [

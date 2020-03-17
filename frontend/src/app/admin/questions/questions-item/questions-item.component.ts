@@ -41,6 +41,7 @@ export class QuestionsItemComponent implements OnInit {
         'type': 0,
         'points': 0,
         'level': 1,
+        'category': 0,
         'answers' : []
     };
     dataErrors = {};
