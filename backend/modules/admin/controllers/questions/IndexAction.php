@@ -56,10 +56,10 @@ class IndexAction extends Action
                 $query->andWhere(['<', 'created_at', $created_at_to->format('Y-m-d 23:59:59')]);
             }
         }
-        //difficulty level
+        /*//difficulty level
         if (in_array($model->level, array_keys(Questions::LEVEL))) {
             $query->andFilterWhere(['level' => $model->level]);
-        }
+        }*/
         //status "active or blocked"
         if (in_array($model->status, array_keys(Questions::STATUSES))) {
             $query->andFilterWhere(['status' => $model->status]);
@@ -109,7 +109,7 @@ class IndexAction extends Action
 	    'level' => null,
 	     'category' => null,
             'type' => null,
-            'level' => null,
+            //'level' => null,
         ]);
         $model->addRule(['title', 'common', 'created_at_from', 'created_at_to', 'status', 'type', 'level', 'category'], 'trim');
         return $model;
