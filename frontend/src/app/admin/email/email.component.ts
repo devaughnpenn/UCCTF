@@ -187,7 +187,10 @@ export class EmailComponent implements OnInit {
         for (let i = this.rows.length - 1; i >= 0; i--) {
             if (this.rows[i].is_checked)
             {
-                items.push(this.rows[i].email);
+                //items.push(this.rows[i].id);
+                this.api.send('mail/send-mail',
+                {},
+                {users: [this.rows[i].id], subject: this.mailSubject, message: this.mailMessage,})
             }
         }
         if (items.length === 0) {
@@ -197,7 +200,22 @@ export class EmailComponent implements OnInit {
         } else {
             this.currIndex = 0;
             this.isProcess = true;
-            this.sendEmail(items);
+            //this.sendEmail(items);
+         //   const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send email to selected player(s)?'});
+         //    dialogRef.afterClosed().subscribe(result => {
+          //  if (result === true) {
+          //      this.api.send('mail/send-mail',
+          //      {},
+          //      {
+          //          users: items, 
+           //         subject: this.mailSubject, 
+            //        message: this.mailMessage,
+            //    }).then(data => {
+                    
+           //     });
+                
+           // }
+          //  });
         }
     }
 
