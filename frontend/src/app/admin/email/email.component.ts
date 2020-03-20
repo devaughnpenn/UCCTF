@@ -11,8 +11,8 @@ import { AdminAccessToTeamsComponent } from '@app/modal/admin-access-to-teams/ad
 import { AuthService } from '@app/auth/auth.service';
 import { WoDialogConfirmComponent } from '@app/wo-module/wo-dialog/wo-dialog-confirm/wo-dialog-confirm.component';
 
-// this module is supposed to allow admin users to select any participant that they wish to send an email 
-//to and read the "subject" and "message" boxes to then send a custom email. !!!THIS DOES NOT WORK!!!!!
+// this module allows admin users to select any participant that they wish to send an email 
+//to and read the "subject" and "message" boxes to then send a custom email. 
 
 @Component({
     templateUrl: 'email.component.html',
@@ -168,86 +168,45 @@ export class EmailComponent implements OnInit {
         this.search.common = '';
         this.toActualUrl();
     }
-
+// Sort for table
     sortBy(event) {
         this.search.sort = event.current;
         this.toActualUrl();
     }
-
+// Check all checkboxes
     checkAllRows(event) {
         for (let i = this.rows.length - 1; i >= 0; i--) {
             this.rows[i].is_checked = event.target.checked;
         }
     }
 
+    //Send Email Button
     doSend() {
         let count = 0;
         this.woFlash.hide();
         const items = [];
-        for (let i = this.rows.length - 1; i >= 0; i--) {
-            if (this.rows[i].is_checked)
-            {
-                //items.push(this.rows[i].id);
-                this.api.send('mail/send-mail',
-                {},
-                {users: [this.rows[i].id], subject: this.mailSubject, message: this.mailMessage,})
+        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send email to selected player(s)?'});
+        dialogRef.afterClosed().subscribe(result => {
+            if (result === true) {
+                for (let i = this.rows.length - 1; i >= 0; i--) {
+                    if (this.rows[i].is_checked)
+                    {
+                        this.api.send('mail/send-mail',
+                        {},
+                        {users: [this.rows[i].id], subject: this.mailSubject, message: this.mailMessage,})
+                    }
+                }
+                this.woFlash.addMessage('Email(s) Sent!');
+                this.woFlash.show('sendEmail');
             }
-        }
-        if (items.length === 0) {
-            setTimeout(() => {
-                this.dialog.open(WoDialogAlertComponent, {message: 'You must select user(s).', css: {top: '130px'}});
-            }, 10);
-        } else {
-            this.currIndex = 0;
-            this.isProcess = true;
-            //this.sendEmail(items);
-         //   const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send email to selected player(s)?'});
-         //    dialogRef.afterClosed().subscribe(result => {
-          //  if (result === true) {
-          //      this.api.send('mail/send-mail',
-          //      {},
-          //      {
-          //          users: items, 
-           //         subject: this.mailSubject, 
-            //        message: this.mailMessage,
-            //    }).then(data => {
-                    
-           //     });
-                
-           // }
-          //  });
-        }
+        });
     }
-
+// Cancel Button
     doCancel(event) {
         window.history.back();
         event.preventDefault();
     }
-
-    sendEmail(items){
-        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send email to selected player(s)?'});
-        dialogRef.afterClosed().subscribe(result => {
-            if (result === true) {
-                this.api.send('mail/send-mail',
-                {},
-                {
-                    users: items, 
-                    subject: this.mailSubject, 
-                    message: this.mailMessage,
-                }).then(res => {
-                    if (res['code'] === 200) {
-                        this.woFlash.addMessage('The operation was done!');
-                        this.woFlash.show('sendEmail');
-                    }else{
-                        this.woFlash.addMessage('Message sending fail.');
-                        this.woFlash.show('sendEmail');
-                    } 
-                });
-                
-            }
-        });
-    }
-
+//Send Custom Email Button
     sendWelcomeEmail(){
         const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send a welcome email to players?'});
         dialogRef.afterClosed().subscribe(result => {
