@@ -9,7 +9,7 @@ If you just want to run the project, follow the steps in the **For Production** 
 ## For Production
 
 ### 1. Copy the environment file.
-Open a terminal in your Ubuntu server. cd to the project directory, go to the *environments* folder, and create a new environment file:
+Open a terminal in your Ubuntu server, and cd to the project directory:
 ```bash
 $ cd frontend/src/environments
 $ sudo cp environment.ts environment.loc.ts
