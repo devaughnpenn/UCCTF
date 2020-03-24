@@ -114,14 +114,16 @@ $ cd backend
 $ sudo ./yii migrate
 ```
 
-### You can install npm by shell script.
+### Install Node JS with curl.
 cd to project Frontend folder.
 ```bash
+$ cd frontend
 $ sudo curl -s https://nodejs.org/dist/v10.12.0/node-v10.12.0-linux-x64.tar.gz | sudo tar -zx --strip-components=1
 ```
 
-### Installing dependencies via npm for frontend.
+### Install NPM.
 cd to project Frontend folder.
 ```bash
+$ cd frontend
 $ sudo npm install
 ```
