@@ -8,14 +8,14 @@ If you just want to run the project, follow the steps in the **For Production** 
 
 ## For Production
 
-### 1. Run the Frontend.
-Open a terminal in your Ubuntu server. cd to the project directory, go to the *environments* folder, and create a new environment file:
+### 1. Copy the environment file.
+Open a terminal in your Ubuntu vm. cd to the project directory, go to the *environments* folder, and create a new environment file:
 ```bash
 $ cd frontend/src/environments
 $ sudo cp environment.ts environment.loc.ts
 ```
 
-#### 3. Edit the environment.loc.ts file's API_BASE_URL:
+#### 2. Edit the environment.loc.ts file's API_BASE_URL:
 ```bash
 $ sudo nano environment.loc.ts
 ```
@@ -27,7 +27,7 @@ API_BASE_URL: "https://cincinnati.of1.weborchestra.org/api",
 ```
 Save your changes and exit nano.
 
-#### 4. Return to frontend folder and run the local server:
+#### 3. Return to frontend folder and run the local server:
 ```bash
 $ cd frontend
 $ sudo npm run local
