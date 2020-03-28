@@ -40,7 +40,7 @@ After running the local server, you can open your project by visiting http://loc
 
 Open a terminal in your Ubuntu server, and cd to the frontend/src folder.
 ```bash
-# cd app_path/frontend/src
+# cd frontend/src
 ```
 Run the following php command:
 ```bash
