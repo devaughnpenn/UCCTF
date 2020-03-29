@@ -21,7 +21,7 @@ class SendEmailAction extends Action
 	$users = $this->getAllUsers();
 
             foreach ($users as $user) {
-                if ($user['status'] === 'active') {
+                if ($user['status'] === 'active' && $user['email'] != '') {
                     $emails[] = $user['email'];
                 }
             }
