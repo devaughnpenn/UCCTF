@@ -206,9 +206,9 @@ export class EmailComponent implements OnInit {
         window.history.back();
         event.preventDefault();
     }
-//Send Custom Email Button
+//Send Welcome Email to all Active Users Button
     sendWelcomeEmail(){
-        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send a welcome email to players?'});
+        const dialogRef = this.dialog.open(WoDialogConfirmComponent, {message: 'Send a welcome email to all active players?'});
         dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
                 this.api.send('events/send-email?&access-token=' + this.auth.getToken()).then(res => {
