@@ -17,7 +17,7 @@ $ sudo php -S 0.0.0.0:4200
 
 ### 2. Run the Frontend.
 
-Open another, separate Ubuntu terminal. In it, cd to the *environments* folder of the project. Then, copy the environment.ts file:
+cd to the *environments* folder of the project. Then, copy the environment.ts file:
 ```bash
 $ cd frontend/src/environments
 $ sudo cp environment.ts environment.loc.ts
