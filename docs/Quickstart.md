@@ -2,6 +2,8 @@
 
 Instructions for running and deploying the application. (Make sure you've completed the steps of the **Installation** doc first before going through this Quickstart.)
 
+---
+
 ### 1. Run the Backend.
 
 Open a terminal in your Ubuntu server, and cd to the *frontend/src* folder of the project.
