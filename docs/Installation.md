@@ -1,7 +1,10 @@
 # Installation
+
+Instructions for setting up the Ubuntu backend server for the application.
+
 ---
 
-### Set up environment for Ubuntu 16.04.
+### 1. Set up environment for Ubuntu 16.04.
 Install packages:
 ```bash
 $ sudo apt-get install apache2 libapache2-mod-php7.0
@@ -40,32 +43,33 @@ Restart mySQL server:
 $ sudo service mysql restart
 ```
 
-### Git Clone this project.
+### 2. Git Clone this project.
+It is recommended you create a new folder/directory for the project first. Then, git clone the project into that folder.
 ```bash
 $ sudo git clone https://github.com/devaughnpenn/UCCTF
 ```
 
-### Installing Composer.
+### 3. Installing Composer.
 ```bash
 $ sudo curl -sS https://getcomposer.org/installer | php
 $ sudo mv composer.phar /usr/local/bin/composer
 ```
 
-### Installing dependencies.
+### 4. Installing dependencies.
 cd (change directory) to the project Backend folder.
 ```bash
 $ cd backend
 $ sudo composer install
 ```
 
-### Add app config file.
+### 5. Add app config file.
 cd to the project Backend folder.
 ```bash
 $ cd backend
 $ sudo cp .env.example .env
 ```
 
-### Set up connection to the mySQL database.
+### 6. Set up connection to the mySQL database.
 Open the new **.env** file in a text editor.
 ```bash
 $ sudo nano .env
@@ -77,7 +81,7 @@ DB_USERNAME      = root
 DB_PASSWORD      = dbpass
 ```
 
-### Create app_db database.
+### 7. Create app_db database.
 Login to mySQL on the command line.
 ```bash
 $ sudo mysql -u root -p
@@ -100,28 +104,28 @@ exit
 ```
 *Note: when using mySQL on the command line, remember to close your commands with ; (semicolon). If you don't supply a semicolon, mySQL will keep asking for more input because it doesn't know that's the end of the command.*
 
-### Configuring RBAC
+### 8. Configuring RBAC
 cd to project Backend folder.
 ```bash
 $ cd backend
 $ sudo ./yii migrate --migrationPath=@yii/rbac/migrations/
 ```
 
-### Run database migration.
+### 9. Run database migration.
 cd to project Backend folder.
 ```bash
 $ cd backend
 $ sudo ./yii migrate
 ```
 
-### Install Node JS with curl.
+### 10. Install Node JS with curl.
 cd to project Frontend folder.
 ```bash
 $ cd frontend
 $ sudo curl -s https://nodejs.org/dist/v10.12.0/node-v10.12.0-linux-x64.tar.gz | sudo tar -zx --strip-components=1
 ```
 
-### Install NPM.
+### 11. Install NPM.
 cd to project Frontend folder.
 ```bash
 $ cd frontend
