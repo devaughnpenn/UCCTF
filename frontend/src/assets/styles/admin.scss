@@ -39,12 +39,16 @@
         border-bottom-left-radius: 3px;
         padding: 10px;
         position: relative;
+        
     }
 
     .content {
         padding: 15px;
+        
     }
-
+    .c-home{
+        height: 100%;
+    }
     .form__search-box:after {
         content: '';
         clear: both;
