@@ -1,68 +1,38 @@
 # Quickstart
 
-(Make sure you've completed the steps of the **Installation** doc first before going through this Quickstart.)
+Instructions for running and deploying the application. (Make sure you've completed the steps of the **Installation** doc first before going through this Quickstart.)
 
-If you just want to run the project, follow the steps in the **For Production** section.
+---
 
-*Developers*: if you want to develop the project in an IDE, follow the steps in the **For Developers** section.
+### 1. Run the Backend.
 
-## For Production
+Open a terminal in your Ubuntu server, and cd to the *frontend/src* folder of the project.
+```bash
+$ cd frontend/src
+```
+Run the following php command:
+```bash
+$ sudo php -S 0.0.0.0:4200
+```
 
-### 1. Copy the environment file.
-Open a terminal in your Ubuntu server, and cd to the project directory:
+### 2. Run the Frontend.
+
+cd to the *environments* folder of the project. Then, copy the environment.ts file:
 ```bash
 $ cd frontend/src/environments
 $ sudo cp environment.ts environment.loc.ts
 ```
 
-### 2. Edit the environment.loc.ts file's API_BASE_URL:
+### 3. Edit the environment.loc.ts file:
 ```bash
 $ sudo nano environment.loc.ts
 ```
-
-```js
-...
-API_BASE_URL: "https://cincinnati.of1.weborchestra.org/api",
-...
-```
-Save your changes and exit nano.
-
-### 3. Return to frontend folder and run the local server:
-```bash
-$ cd frontend
-$ sudo npm run local
-```
-After running the local server, you can open your project by visiting http://localhost:4200/.
-
-## For Developers
-
-### 1. Run the Backend.
-
-Open a terminal in your Ubuntu server, and cd to the frontend/src folder.
-```bash
-# cd frontend/src
-```
-Run the following php command:
-```bash
-# php -S 0.0.0.0:4200
-```
-
-### 2. Run the Frontend.
-(This project works best when using Visual Studio Code.)
-
-Open a Visual Studio Code terminal, cd to the environments folder and create a new environment file:
-```bash
-> cd frontend/src/environments
-> cp environment.ts environment.loc.ts
-```
-
-### 3. Edit the environment.loc.ts file in VSCode:
 ```js
 ...
 API_BASE_URL: "http://your-url.loc/api",
 ...
 ```
-**API_BASE_URL** - the url to your backend server.
+**API_BASE_URL** - the IP address of your Ubuntu server.
 
 Example (use your ubuntu server's actual IP address):
 ```js
@@ -70,11 +40,12 @@ Example (use your ubuntu server's actual IP address):
 API_BASE_URL: "http://192.168.1.1/api",
 ...
 ```
+Save your changes and exit nano.
 
-### 4. Return to frontend folder and run the local server in the VSCode terminal:
+### 4. cd to frontend folder and run the local server:
 ```bash
-> cd frontend
-> npm run local
+$ cd frontend
+$ sudo npm run local
 ```
 The `npm run local` command launches the server, watches your files, and rebuilds the app as you make changes to those files.
 
