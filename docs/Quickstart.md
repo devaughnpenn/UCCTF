@@ -23,7 +23,7 @@ $ cd frontend/src/environments
 $ sudo cp environment.ts environment.loc.ts
 ```
 
-### 3. Edit the environment.loc.ts file in VSCode:
+### 3. Edit the environment.loc.ts file:
 ```js
 ...
 API_BASE_URL: "http://your-url.loc/api",
@@ -38,7 +38,7 @@ API_BASE_URL: "http://192.168.1.1/api",
 ...
 ```
 
-### 4. cd to frontend folder. Then, run the local server:
+### 4. cd to frontend folder and run the local server:
 ```bash
 $ cd frontend
 $ sudo npm run local
