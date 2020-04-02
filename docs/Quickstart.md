@@ -24,6 +24,9 @@ $ sudo cp environment.ts environment.loc.ts
 ```
 
 ### 3. Edit the environment.loc.ts file:
+```bash
+$ sudo nano environment.loc.ts
+```
 ```js
 ...
 API_BASE_URL: "http://your-url.loc/api",
@@ -37,6 +40,7 @@ Example (use your ubuntu server's actual IP address):
 API_BASE_URL: "http://192.168.1.1/api",
 ...
 ```
+Save your changes and exit nano.
 
 ### 4. cd to frontend folder and run the local server:
 ```bash
