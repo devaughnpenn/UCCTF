@@ -104,7 +104,7 @@ exit
 ```
 *Note: when using mySQL on the command line, remember to close your commands with ; (semicolon). If you don't supply a semicolon, mySQL will keep asking for more input because it doesn't know that's the end of the command.*
 
-### 8. Configuring RBAC
+### 8. Configuring RBAC (Role-Based Access Control).
 cd to project Backend folder.
 ```bash
 $ cd backend
@@ -118,7 +118,7 @@ $ cd backend
 $ sudo ./yii migrate
 ```
 
-### 10. Install Node JS with curl.
+### 10. Install Node JS.
 cd to project Frontend folder.
 ```bash
 $ cd frontend
