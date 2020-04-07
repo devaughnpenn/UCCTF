@@ -31,7 +31,7 @@ class AnswerAction extends Action
             }
 
             $data = \Yii::$app->request->post();
-            $isFileChanged = $model->file_id != $data['file_id'];
+          //  $isFileChanged = $model->file_id != $data['file_id'];
             $model->setAttributes($data);
             if ($model->validate()) {
                 $model->save(false);

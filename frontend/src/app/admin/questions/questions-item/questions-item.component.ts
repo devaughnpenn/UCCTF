@@ -90,7 +90,7 @@ export class QuestionsItemComponent implements OnInit {
         if (event.result && event.result.file.id) {
             question['file_id'] = event.result.file.id;
         } else if (event.remove === true) {
-            question['file_id'] = null;
+            question['file_id'] = 0;
         }
     }
 
