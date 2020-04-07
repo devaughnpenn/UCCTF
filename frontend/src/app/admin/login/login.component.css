@@ -12,7 +12,7 @@
 
 .c-login-form__wrapper::before {
     content: '';
-    background: #dedede;
+    background: #3c8dbc;
     position: fixed;
     top: 0;
     left: 0;

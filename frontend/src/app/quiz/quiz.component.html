@@ -2,11 +2,11 @@
     <div class="l-header" *ngIf="isLogged()">
         <div class="l-header__logo">
             <a class="long-logo">
-                <i class="fa fa-rocket" aria-hidden="true"></i>
+                <i class="fa fa-flag" aria-hidden="true"></i>
                 {{title}}
             </a>
             <a class="short-logo">
-                <i class="fa fa-rocket" aria-hidden="true"></i>
+                <i class="fa fa-flag" aria-hidden="true"></i>
             </a>
         </div>
         <a href="javascript:void(0)" (click)="sidebarToggle()" class="sidebar-toggle"></a>
@@ -33,7 +33,7 @@
         <ul class="sidebar-menu small-size">
             <li *ngFor="let question of this.questions; let i=index" class="treeview">
                 <a [scrollTo]="'#block_'+question.id" href="javascript:void(false)">
-                    <i class="fa" [ngClass]="question.is_selected ? 'fa-check text-success' : 'fa-circle-o text-warning'" aria-hidden="true"></i>{{i + 1}}
+                    <i class="fa" [ngClass]="question.is_selected ? 'fa-check text-success' : 'fa-circle-o text-warning'" aria-hidden="true"></i> Question #{{i + 1}}
                 </a>
             </li>
         </ul>
