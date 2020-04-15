@@ -1,10 +1,18 @@
 # Installation
 
-Instructions for setting up the Ubuntu backend server for the application.
+Instructions for setting up the Backend and Frontend servers for the application.
+
+What you will need:
+- a 64-bit Ubuntu 16.04 **Server** ISO image
+- a 64-bit Ubuntu 16.04 **Desktop** ISO image
+
+You can get these Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
 
 ---
 
-### 1. Set up environment for Ubuntu 16.04.
+## Configure Backend
+
+### 1. Set up environment for Ubuntu 16.04 Server.
 Install packages:
 ```bash
 $ sudo apt-get install apache2 libapache2-mod-php7.0
@@ -118,16 +126,60 @@ $ cd backend
 $ sudo ./yii migrate
 ```
 
-### 10. Install Node JS.
-cd to project Frontend folder.
+## Configure Frontend Server
+
+### 1. Set up environment for Ubuntu 16.04 Desktop.
+Open a terminal, and install packages as superuser:
 ```bash
-$ cd frontend
-$ sudo curl -s https://nodejs.org/dist/v10.12.0/node-v10.12.0-linux-x64.tar.gz | sudo tar -zx --strip-components=1
+$ sudo su
+# apt-get update
+# apt-get install git
+# apt install curl
 ```
 
-### 11. Install NPM.
+### 2. Git Clone this project.
+It is recommended you create a new folder/directory for the project first. Then, git clone the project into that folder.
+```bash
+# git clone https://github.com/devaughnpenn/UCCTF
+```
+
+### 3. Install Node Version Manager (NVM)
+cd to the project frontend folder.
+```bash
+# cd frontend
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+In order to use NVM, exit your terminal and open a new one. Then, install the latest version of Node JS.
+```bash
+# nvm install 12.16.2
+```
+You can check the version of Node JS to confirm installation.
+```bash
+# node -v
+```
+
+### 4. Set Root Privileges.
+```bash
+# npm config set user 0
+# npm config set unsafe-perm true
+```
+
+### 5. Install Angular.
 cd to project Frontend folder.
 ```bash
-$ cd frontend
-$ sudo npm install
+# cd frontend
+```
+Install Angular globally.
+```bash
+# npm install -g @angular/cli@latest
+# npm install --save-dev @angular/cli@latest
+```
+Install dependencies.
+```bash
+# npm install
+```
+Finally, update Angular to the latest version.
+```bash
+# ng update
+# ng update @angular/core --allow-dirty
 ```
