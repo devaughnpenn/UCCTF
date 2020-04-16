@@ -155,8 +155,9 @@ cd to the project frontend folder.
 # cd frontend
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
-In order to use NVM, exit your terminal and open a new one. Then, use the following command to install the latest version of Node JS.
+In order to use NVM, exit your terminal and open a new one. Then, cd to the Frontend project folder, and use the following command to install the latest version of Node JS.
 ```bash
+# cd frontend
 # nvm install 12.16.2
 ```
 You can check the version of Node JS to confirm installation.
