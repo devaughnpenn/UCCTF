@@ -6,7 +6,7 @@ What you will need:
 - 64-bit Ubuntu 16.04 **Server** VM
 - 64-bit Ubuntu 16.04 **Desktop** VM
 
-You can get these Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
+You can get the Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
 
 ---
 
