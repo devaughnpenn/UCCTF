@@ -3,8 +3,8 @@
 Instructions for setting up the Backend and Frontend servers for the application.
 
 What you will need:
-- 64-bit Ubuntu 16.04 **Server** iso
-- 64-bit Ubuntu 16.04 **Desktop** iso
+- 64-bit Ubuntu 16.04 **Server** VM
+- 64-bit Ubuntu 16.04 **Desktop** VM
 
 You can get these Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
 
@@ -12,7 +12,7 @@ You can get these Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
 
 ## Configure Backend
 
-### 1. Set up environment for Ubuntu 16.04 Server.
+### 1. Set up environment for Ubuntu 16.04 Server VM.
 Install packages as superuser:
 ```bash
 $ sudo su
@@ -127,9 +127,11 @@ cd to project Backend folder.
 # ./yii migrate
 ```
 
+---
+
 ## Configure Frontend Server
 
-### 1. Set up environment for Ubuntu 16.04 Desktop.
+### 1. Set up environment for Ubuntu 16.04 Desktop VM.
 Open a terminal, and install packages as superuser:
 ```bash
 $ sudo su
