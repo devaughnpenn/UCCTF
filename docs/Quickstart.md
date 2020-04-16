@@ -4,8 +4,7 @@ Instructions for running and deploying the application. (Make sure you've comple
 
 ---
 
-### 1. Run the Backend Server.
-Open a terminal in your backend server.
+### 1. Run the Backend.
 
 cd to the frontend/src folder of the project.
 ```bash
@@ -16,8 +15,7 @@ Run the following php command:
 # php -S 0.0.0.0:4200
 ```
 
-### 2. Configure the Frontend Server.
-Open a terminal in your frontend server.
+### 2. Configure the Frontend.
 
 cd to the environments folder of the project:
 ```bash
@@ -47,7 +45,7 @@ API_BASE_URL: "http://175.132.1.1:4200/api",
 ```
 Save your changes and exit nano.
 
-### 3. Run the Frontend Server.
+### 3. Run the Frontend.
 
 cd to the Frontend folder:
 ```bash
