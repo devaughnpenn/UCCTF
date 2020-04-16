@@ -152,7 +152,7 @@ cd to the project frontend folder.
 # cd frontend
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
-In order to use NVM, exit your terminal and open a new one. Then, install the latest version of Node JS.
+In order to use NVM, exit your terminal and open a new one. Then, use the following command to install the latest version of Node JS.
 ```bash
 # nvm install 12.16.2
 ```
@@ -172,13 +172,10 @@ cd to project Frontend folder.
 ```bash
 # cd frontend
 ```
-Install Angular globally.
+Install Angular and dependencies.
 ```bash
 # npm install -g @angular/cli@latest
 # npm install --save-dev @angular/cli@latest
-```
-Install dependencies.
-```bash
 # npm install
 ```
 Finally, update Angular to the latest version.
