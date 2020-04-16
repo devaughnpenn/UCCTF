@@ -128,6 +128,8 @@ cd to project Backend folder.
 # ./yii migrate
 ```
 
+Your backend server is now fully set up for the project.
+
 ---
 
 ## Configure Frontend Server
