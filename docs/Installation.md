@@ -149,13 +149,13 @@ It is recommended you create a new folder/directory for the project first. Then,
 # git clone https://github.com/devaughnpenn/UCCTF
 ```
 
-### 3. Install Node Version Manager (NVM)
-cd to the project frontend folder.
+### 3. Install Node Version Manager (nvm)
+cd to project frontend folder.
 ```bash
 # cd frontend
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
-In order to use NVM, exit your terminal and open a new one. Then, cd to the Frontend project folder, and use the following command to install the latest version of Node JS.
+In order to use nvm, exit your terminal and open a new one. Then, cd to the Frontend project folder, and use the following command to install the latest version of Node JS.
 ```bash
 # cd frontend
 # nvm install 12.16.2
@@ -166,7 +166,9 @@ You can check the version of Node JS to confirm installation.
 ```
 
 ### 4. Set Root Privileges.
+cd to project frontend folder.
 ```bash
+# cd frontend
 # npm config set user 0
 # npm config set unsafe-perm true
 ```
@@ -187,3 +189,4 @@ Finally, update Angular to the latest version.
 # ng update
 # ng update @angular/core --allow-dirty
 ```
+Your frontend server is now fully set up for the project. To run the application, visit the [Quickstart](https://github.com/devaughnpenn/UCCTF/blob/master/docs/Quickstart.md) documentation.
