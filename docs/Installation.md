@@ -1,18 +1,10 @@
 # Installation
 
-Instructions for setting up the Backend and Frontend servers for the application.
-
-What you will need:
-- 64-bit Ubuntu 16.04 **Server** VM
-- 64-bit Ubuntu 16.04 **Desktop** VM
-
-You can get the Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
+Instructions for setting up the Backend and Frontend of the application.
 
 ---
 
-## Configure Backend
-
-### 1. Set up environment for Ubuntu 16.04 Server VM.
+### 1. Set up environment for Ubuntu 16.04.
 Install packages as superuser:
 ```bash
 $ sudo su
@@ -128,28 +120,7 @@ cd to project Backend folder.
 # ./yii migrate
 ```
 
-Your backend server is now fully set up for the project.
-
----
-
-## Configure Frontend Server
-
-### 1. Set up environment for Ubuntu 16.04 Desktop VM.
-Open a terminal, and install packages as superuser:
-```bash
-$ sudo su
-# apt-get update
-# apt-get install git
-# apt install curl
-```
-
-### 2. Git Clone this project.
-It is recommended you create a new folder/directory for the project first. Then, git clone the project into that folder.
-```bash
-# git clone https://github.com/devaughnpenn/UCCTF
-```
-
-### 3. Install Node Version Manager (nvm)
+### 10. Install Node Version Manager (nvm)
 cd to project frontend folder.
 ```bash
 # cd frontend
@@ -165,7 +136,7 @@ You can check the version of Node JS to confirm installation.
 # node -v
 ```
 
-### 4. Set Root Privileges.
+### 11. Set Root Privileges.
 cd to project frontend folder.
 ```bash
 # cd frontend
@@ -173,7 +144,7 @@ cd to project frontend folder.
 # npm config set unsafe-perm true
 ```
 
-### 5. Install Angular.
+### 12. Install Angular.
 cd to project Frontend folder.
 ```bash
 # cd frontend
@@ -189,4 +160,4 @@ Finally, update Angular to the latest version.
 # ng update
 # ng update @angular/core --allow-dirty
 ```
-Your frontend server is now fully set up for the project. To run the application, visit the [Quickstart](https://github.com/devaughnpenn/UCCTF/blob/master/docs/Quickstart.md) documentation.
+You're now fully set up to run the project. To run the application, visit the [Quickstart](https://github.com/devaughnpenn/UCCTF/blob/master/docs/Quickstart.md) documentation.
