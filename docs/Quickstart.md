@@ -5,29 +5,31 @@ Instructions for running and deploying the application. (Make sure you've comple
 ---
 
 ### 1. Run the Backend Server.
+Open a terminal in your backend server.
 
 cd to the frontend/src folder of the project.
 ```bash
-$ cd frontend/src
+# cd frontend/src
 ```
 Run the following php command:
 ```bash
-$ sudo php -S 0.0.0.0:4200
+# php -S 0.0.0.0:4200
 ```
 
 ### 2. Configure the Frontend Server.
+Open a terminal in your frontend server.
 
 cd to the environments folder of the project:
 ```bash
-$ cd frontend/src/environments
+# cd frontend/src/environments
 ```
 Copy the environment file:
 ```bash
-$ sudo cp environment.ts environment.loc.ts
+# cp environment.ts environment.loc.ts
 ```
 Open the environment file in nano.
 ```bash
-$ sudo nano environment.loc.ts
+# nano environment.loc.ts
 ```
 Edit the environment file:
 ```js
@@ -49,7 +51,7 @@ Save your changes and exit nano.
 
 cd to the Frontend folder:
 ```bash
-$ cd frontend
+# cd frontend
 ```
 run local server via npm command:
 ```bash
