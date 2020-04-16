@@ -3,8 +3,8 @@
 Instructions for setting up the Backend and Frontend servers for the application.
 
 What you will need:
-- 64-bit Ubuntu 16.04 **Server**
-- 64-bit Ubuntu 16.04 **Desktop**
+- 64-bit Ubuntu 16.04 **Server** iso
+- 64-bit Ubuntu 16.04 **Desktop** iso
 
 You can get these Ubuntu images [here.](http://releases.ubuntu.com/16.04/)
 
