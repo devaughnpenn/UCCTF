@@ -35,7 +35,7 @@ Edit the environment file:
 API_BASE_URL: "http://your-url.loc/api",
 ...
 ```
-**API_BASE_URL** - the IP address of your Backend server, appended with the port number and /api.
+**API_BASE_URL** - the IP address of your backend server, appended with the port number and /api.
 
 Example (use your backend server's actual IP address):
 ```js
